@@ -218,4 +218,17 @@ li::marker {
   .md-sidebar--secondary {
     display: none !important;
   }
+
+  .md-sidebar--secondary:not([hidden]) {
+    visibility: hidden;
+  }
+
+  .md-sidebar--secondary[hidden] {
+    display: none !important;
+    visibility: hidden;
+  }
+
+
+
+
 }
