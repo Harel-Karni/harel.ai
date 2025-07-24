@@ -1,0 +1,519 @@
+
+<!doctype html>
+<html lang="he" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="מדריך בעברית ל־Git ולכלים נוספים">
+      
+      
+        <meta name="author" content="Harel Karni">
+      
+      
+        <link rel="canonical" href="https://harel.ai/Investment-risk/c/">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>ניתוח רגישות והערכת סיכונים – תרחישים וסימולציות - Harel.AI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=system-ui,+'Segoe+UI',+Roboto,+'Helvetica+Neue',+Arial,+sans-serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/styles/extra.css">
+    
+      <link rel="stylesheet" href="https://unpkg.com/katex@0/dist/katex.min.css">
+    
+      <link rel="stylesheet" href="../../assets/styles/katex.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="rtl" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          לדלג לתוכן
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="כותרת עליונה">
+    <a href="../.." title="Harel.AI" class="md-header__button md-logo" aria-label="Harel.AI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.19 14.19 6 18l3.81-8.19L18 6m-6-4A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 8.9a1.1 1.1 0 0 0-1.1 1.1 1.1 1.1 0 0 0 1.1 1.1 1.1 1.1 0 0 0 1.1-1.1 1.1 1.1 0 0 0-1.1-1.1"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Harel.AI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ניתוח רגישות והערכת סיכונים – תרחישים וסימולציות
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="חיפוש" placeholder="חיפוש" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="חיפוש">
+        
+        <button type="reset" class="md-search__icon md-icon" title="ניקוי" aria-label="ניקוי" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            אתחול חיפוש
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="ניווט" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Harel.AI" class="md-nav__button md-logo" aria-label="Harel.AI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.19 14.19 6 18l3.81-8.19L18 6m-6-4A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 8.9a1.1 1.1 0 0 0-1.1 1.1 1.1 1.1 0 0 0 1.1 1.1 1.1 1.1 0 0 0 1.1-1.1 1.1 1.1 0 0 0-1.1-1.1"/></svg>
+
+    </a>
+    Harel.AI
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ברוכים הבאים
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../index" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    הסיכון
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sensitivity-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      מהו ניתוח רגישות (Sensitivity Analysis)?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sensitivity-analysis_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      ניתוח רגישות (Sensitivity Analysis) והערכת סיכונים
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scenario-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      ניתוח תרחישים (Scenario Analysis)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stress-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      מבחני לחץ (Stress Testing)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#monte-carlo-simulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      סימולציות מונטה קרלו (Monte Carlo Simulations)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">ניתוח רגישות והערכת סיכונים – תרחישים וסימולציות</h1>
+<p>לאחר שסקרנו את מדדי הסיכון המרכזיים המאפשרים לנו לכמת את התנודתיות והחשיפה של השקעה, פרק זה יתמקד בגישות מתקדמות יותר להערכת סיכונים: <strong>ניתוח רגישות</strong> ו<strong>תרחישים</strong>. כלים אלו אינם מודדים סיכון היסטורי בלבד, אלא מאפשרים למשקיעים לבחון כיצד השקעה עלולה להגיב לשינויים עתידיים בגורמי מפתח, ומספקים תובנות מעמיקות יותר לגבי פוטנציאל ההפסד בתנאים שונים.</p>
+<h2 id="sensitivity-analysis">מהו ניתוח רגישות (Sensitivity Analysis)?</h2>
+<p><strong>ניתוח רגישות</strong> הוא כלי אנליטי המשמש להערכת האופן שבו התוצאה של מודל או השקעה מסוימת תשתנה כתוצאה משינוי בודד באחד ממשתני הקלט (Inputs), כאשר כל שאר המשתנים נשארים קבועים. מטרתו העיקרית היא לזהות אילו משתנים משפיעים באופן המשמעותי ביותר על התוצאה הסופית, ובכך להבין את נקודות התורפה והחשיפה העיקריות של ההשקעה.</p>
+<p>במילים פשוטות, ניתוח רגישות עונה על השאלה: "בכמה תשתנה תשואת התיק או שווי ההשקעה אם משתנה מסוים (לדוגמה, הריבית, האינפלציה, או מחיר חומר גלם) ישתנה באחוז מסוים?"</p>
+<h2 id="sensitivity-analysis_1">ניתוח רגישות (Sensitivity Analysis) והערכת סיכונים</h2>
+<p><strong>ניתוח רגישות</strong> הוא כלי בניהול פיננסי המשמש להערכת <strong>השפעת השינויים במשתני מפתח</strong> על תוצאות ההשקעה או הפרויקט. מטרתו לענות על השאלה "מה קורה לתוצאה (שווי נכס, תשואה, רווח) אם גורם מסוים משתנה?", בהנחה שכל שאר הגורמים קבועים. בניתוח רגישות בודקים מגוון ערכים אפשריים של משתנה עצמאי (כגון שיעור ריבית, שיעור אינפלציה, שער חליפין, שיעור צמיחה ברווחים), ובוחנים כיצד הם משפיעים על משתנה תלוי (כגון שווי נכס, רווח נקי, או מחיר מניה) תחת סט הנחות נתון</p>
+<p>במסגרת ההשקעות, ניתוח רגישות מסייע בהבנת הסיכונים על ידי כימות ההשפעה של תרחישים שונים. דוגמה קלאסית היא <strong>השפעת שינויים בריבית על מחיר אג"ח</strong>: ידוע שאג"ח בעלת מח"מ/משך מסוים רגישה לשינויים בריבית. אם נניח שאג"ח מסוימת בעלת משך 4 שנים, העלאה של 1% בריבית צפויה (בקירוב) להפחית את מחיר האג"ח בכ-4%. באמצעות ניתוח רגישות, אפשר למפות כיצד שינוי של +0.5%, +1%, +2% בריבית ישפיע על מחיר אותה אג"ח, וכך להעריך את <em>סיכון הריבית</em> הגלום בה. תוצאה אפשרית: עלייה של 2% בריבית תגרום כ-8% ירידה במחיר – נתון שמסייע למשקיע להבין את פוטנציאל ההפסד מתרחיש כזה.</p>
+<p>באופן דומה, ניתן לבצע ניתוח רגישות עבור <em>מניות</em> ביחס לשינויים בפרמטרים כמו שיעור הצמיחה ברווחי החברה, מרווח הרווח הגולמי או היוון תזרימי המזומנים. למשל, משקיע עשוי לבחון: "מה יהיה שווי המניה אם שיעור הצמיחה ב-5 השנים הבאות יהיה 8% במקום 10% שהונח?" או "מה יקרה לרווח החברה אם מחירי חומרי הגלם יעלו ב-15%?". על ידי שינוי פרמטר בודד ובחינת התוצאה, מבודדים את השפעת אותו גורם על ההשקעה.</p>
+<p><strong>שימוש בניתוח רגישות בהערכת סיכונים:</strong></p>
+<ol>
+<li><strong>זיהוי גורמי סיכון מרכזיים:</strong> הניתוח מגלה אילו משתנים הם המשמעותיים ביותר להשקעה. אם למשל שווי פרויקט תלוי מאוד במחיר נפט, נראה שבתסריטים בהם מחיר הנפט משתנה במעט – השווי משתנה באופן דרמטי. הדבר מאותת שזהו גורם סיכון קריטי שיש להתמקד בו (אולי לגדר או לנטר בקפידה).</li>
+<li><strong>הבנת טווח התוצאות האפשריות:</strong> ניתוח רגישות מציג למשקיע את "מרחב האפשרויות" – למשל, בתרחיש אופטימי (מחירי סחורות יורדים, מכירות עולות) הרווח גבוה, אך בתרחיש פסימי (מחירי תשומה עולים, ביקוש יורד) הפרויקט אולי אף מפסיד. הפער בין התרחישים מסמן את רמת הסיכון.</li>
+<li><strong>היערכות וניהול סיכונים פרואקטיבי:</strong> אם מזוהה שגורם מסוים (כגון ריבית) עלול לפגוע קשות בהשקעה, המשקיע יכול להיערך: למשל להקטין חשיפה לאג"ח ארוכות טווח אם ניתוח הרגישות מראה שהן רגישות מאוד לעליית ריבית. בדומה, חברה יכולה לגדר מטבע אם רווחיה רגישים מאוד לשער חליפין.</li>
+<li><strong>השוואת פרויקטים/השקעות:</strong> שני פרויקטים עשויים להיות בעלי ערך נוכחי נקי חיובי בהנחת הבסיס, אך ניתוח רגישות עשוי להראות שאחד מהם יציב יחסית לשינויים (נחשב "בטוח" יותר) בעוד השני מתפרק בתרחיש פסימי קל. מידע זה יסייע בבחירה בין האלטרנטיבות.</li>
+</ol>
+<p>ניתוח רגישות מקובל ככלי משלים ל<strong>ניתוח תרחישים</strong>: בניתוח רגישות משנים <em>משתנה יחיד</em> בכל פעם, בעוד בניתוח תרחישים משנים כמה משתנים יחד לתרחיש כולל (למשל "מיתון עמוק": ירידה בביקוש, עלייה בריבית, אינפלציה גבוהה). שני הכלים יחד מאפשרים הבנה רחבה של סיכון: הראשון מבודד השפעות, והשני מדמה מצבי עולם. דוגמה לשימוש מוסדי: מוסדות פיננסיים מחויבים לעיתים לבצע ניתוח רגישות לתיק הנכסים שלהם ולפרסם, למשל, <em>מה תהיה ההשפעה על ההכנסות והרווח במקרה של שינוי של ±1% בריבית</em> (זוהי דרישה רגולטורית עבור בנקים, המדווחים על "פער ריביות" ורגישות ההכנסות משינוי ריבית).</p>
+<p>בסיכומו של דבר, ניתוח רגישות הוא חלק אינטגרלי ממערך ניהול הסיכונים. הוא מאפשר "לחוש את ההשקעה" תחת תנאים שונים, להבין <strong>איפה נקודות התורפה</strong> (לאיזה גורם התוצאה רגישה במיוחד) ולקבל החלטות מדיניות מתאימות – בין אם זה גידור סיכונים, דרישת תשואה גבוהה יותר כתמורה, או אף ויתור על ההשקעה אם הרגישות גדולה מדי.</p>
+<p><strong>יישומים עיקריים בהשקעות:</strong></p>
+<ul>
+<li>
+<p><strong>בחינת רגישות מחיר אגרת חוב לשינויי ריבית:</strong> שינוי של 1% בריבית יכול להשפיע באופן דרמטי על מחיר אגרת חוב ארוכת טווח. ניתוח רגישות יכול להמחיש זאת.</p>
+</li>
+<li>
+<p><strong>הערכת שווי חברה:</strong> כיצד שינוי בשיעור הצמיחה הצפוי, שולי הרווח, או עלות ההון ישפיעו על הערכת השווי של חברה בשיטת תזרים מזומנים מהוון (DCF).</p>
+</li>
+<li>
+<p><strong>השפעת תנודות במטבעות על חברות יצואניות/יבואניות:</strong> כיצד שינויים בשער החליפין ישפיעו על רווחיות חברה בעלת פעילות בינלאומית.</p>
+</li>
+<li>
+<p><strong>רגישות תיק השקעות למחירי סחורות:</strong> כיצד תיק המושקע בחברות אנרגיה יושפע מירידה במחיר הנפט.</p>
+</li>
+</ul>
+<p>כיצד זה מתבצע?</p>
+<p>התהליך כולל זיהוי משתני מפתח משפיעים, קביעת טווח שינוי לכל משתנה (לדוגמה, ±5% או ±10%), ולאחר מכן חישוב מחדש של תוצאת המודל או ההשקעה עבור כל שינוי כזה. התוצאות מוצגות לרוב בטבלה, גרף או "תרשים טורנדו" (Tornado Chart) שמציג באופן ויזואלי את המשתנים המשפיעים ביותר.</p>
+<p><strong>יתרונות:</strong> ניתוח רגישות מאפשר למשקיעים לזהות את "הנהגים" העיקריים של סיכון ותשואה, ולהבין היכן כדאי לרכז את מאמצי ניהול הסיכונים או מחקר נוסף. הוא מסייע להבין את נקודות התורפה של ההשקעה.</p>
+<p><strong>מגבלות:</strong> ניתוח רגישות בוחן כל משתנה בנפרד (כל היתר קבועים), בעוד שבמציאות, משתנים רבים נוטים לנוע יחד (יש ביניהם מתאם). זה מוביל אותנו לצורך בכלים מורכבים יותר כמו ניתוח תרחישים.</p>
+<h2 id="scenario-analysis">ניתוח תרחישים (Scenario Analysis)</h2>
+<p><strong>ניתוח תרחישים</strong> הוא כלי להערכת סיכונים שבוחן את ביצועי ההשקעה או התיק בתנאים משתנים של מספר גורמים סיכון בו-זמנית. בניגוד לניתוח רגישות המתמקד במשתנה יחיד, ניתוח תרחישים יוצר <strong>"סיפורים" או "מצבי שוק" סבירים וקיצוניים</strong> (תרחישים), ובודק כיצד ההשקעה תתנהג תחת כל אחד מהם.</p>
+<p><strong>מטרתו:</strong> להבין את החשיפה הכוללת של ההשקעה לאירועים מורכבים או למצבי שוק לא רצויים, ולבחון את עמידות התיק בתנאי לחץ.</p>
+<p><strong>דוגמאות לתרחישים:</strong></p>
+<ul>
+<li>
+<p><strong>תרחיש מיתון כלכלי חמור:</strong> כולל ירידה בתמ"ג, עלייה באבטלה, ירידה ברווחי חברות, עלייה בריביות. כיצד ישפיע על תיק מניות, אגרות חוב ותיק נדל"ן?</p>
+</li>
+<li>
+<p><strong>תרחיש משבר גיאופוליטי:</strong> כולל עלייה חדה במחירי הנפט, פיחות במטבע המקומי, ירידות בשווקי מניות גלובליים.</p>
+</li>
+<li>
+<p><strong>תרחיש "בום טכנולוגי":</strong> צמיחה מהירה במגזר הטכנולוגיה, עליות חדות במניות טכנולוגיה, ירידה בתשואות באגרות חוב ממשלתיות.</p>
+</li>
+</ul>
+<p><strong>כיצד זה מתבצע?</strong></p>
+<ol>
+<li>
+<p><strong>הגדרת התרחישים:</strong> קביעת מספר מוגבל של תרחישים סבירים (לרוב 3-5): תרחיש בסיס (Baseline), תרחיש אופטימי ותרחיש פסימי/קיצוני. כל תרחיש כולל קבוצה של הנחות עקביות לגבי משתני מפתח (לדוגמה, שיעורי ריבית, שיעורי צמיחה, מחירי סחורות, שערי חליפין).</p>
+</li>
+<li>
+<p><strong>השפעה על תיק ההשקעות:</strong> עבור כל תרחיש, מודלים פיננסיים מחשבים את התוצאה הצפויה עבור תיק ההשקעות (לדוגמה, שווי התיק, תשואה, הפסד).</p>
+</li>
+<li>
+<p><strong>ניתוח התוצאות:</strong> השוואת ביצועי התיק בין התרחישים השונים מסייעת לזהות את הפגיעות הפוטנציאלית ואת עמידות התיק.</p>
+</li>
+</ol>
+<p><strong>יתרונות:</strong> ניתוח תרחישים מספק תמונה מציאותית יותר של הסיכון, כיוון שהוא מביא בחשבון את הקשרים בין משתנים שונים. הוא מאפשר לבחון אירועים קיצוניים ("זנבות שמנים") שסטיית תקן רגילה אינה לוכדת היטב, ומסייע בקבלת החלטות אסטרטגיות בתנאי אי-ודאות.</p>
+<p><strong>מגבלות:</strong> תלוי במידת הדיוק של התרחישים שנבחרו. קשה לכמת את ההסתברות להתרחשות כל תרחיש, ולרוב מדובר בתרחישים סובייקטיביים. יש סכנה להתעלם מ"ברבורים שחורים" (אירועים בלתי צפויים לחלוטין) שלא נכללו בתרחישים.</p>
+<h2 id="stress-testing">מבחני לחץ (Stress Testing)</h2>
+<p><strong>מבחני לחץ</strong> הם סוג ספציפי של ניתוח תרחישים, המתמקדים בתרחישים קיצוניים מאוד ופחות סבירים, אך בעלי פוטנציאל להשפעה הרסנית על תיק ההשקעות או על המוסד הפיננסי. מטרתם היא לבדוק את עמידות התיק בתנאי שוק קשים במיוחד, שמעולם לא התרחשו או שהתרחשו לעיתים רחוקות מאוד בעבר.</p>
+<p><strong>ההבדל העיקרי מניתוח תרחישים:</strong> בעוד שניתוח תרחישים יכול לכלול גם תרחישים מתונים או סבירים, מבחני לחץ מתמקדים ב"מה אם הגרוע מכל יקרה?" – למשל, ירידה של 30% בשוק המניות תוך שבוע, או משבר אשראי עולמי בסדר גודל של 2008.</p>
+<p><strong>יישומים:</strong> מבחני לחץ נפוצים מאוד במוסדות פיננסיים (בנקים, חברות ביטוח) ככלי רגולטורי לניהול סיכונים. הם בודקים את יכולת המוסד לעמוד בזעזועים גדולים בשוק, וקובעים את דרישות ההון שהוא צריך להחזיק.</p>
+<p><strong>יתרונות:</strong> מספקים תובנה לגבי חשיפה לסיכוני זנב (Tail Risks) – אירועים בעלי סבירות נמוכה אך השפעה הרסנית. מסייעים למנהלי סיכונים לתכנן תגובות לאירועים קיצוניים ולבנות "כרית ביטחון".</p>
+<p><strong>מגבלות:</strong> תלויים מאוד בבחירת התרחישים הקיצוניים. לעיתים קרובות מבוססים על אירועי עבר (אך אינם בהכרח משקפים את המשבר הבא). יכולים להוביל לדרישות הון גבוהות מדי שפוגעות ביעילות.</p>
+<h2 id="monte-carlo-simulations">סימולציות מונטה קרלו (Monte Carlo Simulations)</h2>
+<p><strong>סימולציות מונטה קרלו</strong> הן שיטה חישובית המשתמשת בדגימה אקראית חוזרת ונשנית כדי למדל את ההתנהגות האפשרית של מערכת או השקעה מורכבת. בהקשר של השקעות, הן מאפשרות לחזות טווח רחב של תוצאות אפשריות עבור תיק השקעות, בהתחשב באי-ודאות של המשתנים השונים.</p>
+<p><strong>כיצד זה מתבצע?</strong></p>
+<ol>
+<li>
+<p><strong>הגדרת מודל:</strong> הגדרת מודל פיננסי המקשר בין משתני הקלט (לדוגמה, תשואות נכסים, מתאמים, אינפלציה) לבין התוצאה הסופית (לדוגמה, שווי תיק עתידי).</p>
+</li>
+<li>
+<p><strong>הגדרת התפלגויות הסתברות:</strong> לכל משתנה קלט, מגדירים התפלגות הסתברות ריאלית (לדוגמה, תשואות מניות יכולות להתפלג נורמלית סביב ממוצע מסוים עם סטיית תקן נתונה).</p>
+</li>
+<li>
+<p><strong>ביצוע סימולציות:</strong> המחשב מריץ אלפי ואף עשרות אלפי איטרציות (סימולציות). בכל איטרציה:</p>
+<ul>
+<li>
+<p>נדגמים ערכים אקראיים מתוך התפלגויות ההסתברות של כל משתני הקלט.</p>
+</li>
+<li>
+<p>המודל מחושב עם הערכים שנדגמו, ומתקבלת תוצאה אחת אפשרית.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>ניתוח התוצאות:</strong> לאחר השלמת כל האיטרציות, מתקבלת התפלגות של אלפי תוצאות אפשריות (לדוגמה, התפלגות של שווי התיק הסופי). מתוך התפלגות זו, ניתן לחשב הסתברויות לתרחישים שונים (לדוגמה, מה הסיכוי שהתיק יגיע לשווי מסוים, או מה הסיכוי להפסיד יותר מ-X%?).</p>
+</li>
+</ol>
+<p><strong>יתרונות:</strong> סימולציות מונטה קרלו מספקות תמונה מקיפה של טווח התוצאות האפשריות ושל ההסתברות לכל תוצאה. הן מאפשרות להתחשב בקשרים מורכבים בין משתנים (מתאמים) ובאי-לינאריות, ואינן מוגבלות להנחת התפלגות נורמלית. הן שימושיות מאוד לתכנון פרישה, הערכת יעדי חיסכון, וקבלת החלטות השקעה לטווח ארוך בתנאי אי-ודאות.</p>
+<p><strong>מגבלות:</strong> דורשות כוח חישוב משמעותי. איכות התוצאות תלויה באיכות ההנחות לגבי התפלגויות ההסתברות ומתאמים בין המשתנים. הן אינן יכולות לחזות אירועים שלא נכללו במודל (כמו "ברבורים שחורים" אמיתיים).</p>
+<p>לסיכום, ניתוח רגישות, תרחישים, מבחני לחץ וסימולציות מונטה קרלו הם כלים חיוניים המשלמים את מדדי הסיכון המסורתיים. הם מעניקים למשקיעים יכולת לבחון את עמידות השקעותיהם בתנאים עתידיים משתנים, להבין את מקורות הסיכון העיקריים, ולתכנן אסטרטגיות הגנה ובניית תיק שיעמוד במבחן הזמן גם בתקופות אי-ודאות.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        
+<div class="md-footer">
+    <div class="md-footer-meta">
+        <div class="md-footer-copyright">
+            &copy; 2025 האתר של הראל קרני
+        </div>
+    </div>
+</div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["toc.follow", "navigation.instant", "navigation.instant.progressive", "navigation.indexes", "navigation.blog", "navigation.path", "navigation.tracking", "navigation.prune", "navigation.expand", "navigation.expandable", "navigation.scroll"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u05d4\u05d5\u05e2\u05ea\u05e7 \u05dc\u05dc\u05d5\u05d7", "clipboard.copy": "\u05d4\u05e2\u05ea\u05e7\u05d4 \u05dc\u05dc\u05d5\u05d7", "search.result.more.one": "\u05e2\u05d5\u05d3 \u05d0\u05d7\u05d3 \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.more.other": "\u05e2\u05d5\u05d3 # \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.none": "\u05d0\u05d9\u05df \u05de\u05e1\u05de\u05db\u05d9\u05dd \u05ea\u05d5\u05d0\u05de\u05d9\u05dd", "search.result.one": "\u05de\u05e1\u05de\u05da1 \u05ea\u05d5\u05d0\u05dd", "search.result.other": "# \u05de\u05e1\u05de\u05da \u05ea\u05d5\u05d0\u05dd", "search.result.placeholder": "\u05d9\u05e9 \u05dc\u05d4\u05e7\u05dc\u05d9\u05d3 \u05db\u05d3\u05d9 \u05dc\u05d4\u05ea\u05d7\u05d9\u05dc \u05dc\u05d7\u05e4\u05e9", "search.result.term.missing": "\u05d7\u05e1\u05e8", "select.version": "\u05d1\u05d7\u05d9\u05e8\u05ea \u05d2\u05e8\u05e1\u05d4"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/katex.min.js"></script>
+      
+        <script src="https://unpkg.com/katex@0/dist/contrib/auto-render.min.js"></script>
+      
+        <script src="../../assets/javascripts/katex.js"></script>
+      
+    
+  </body>
+</html>
