@@ -1,0 +1,18 @@
+venv/
+.env
+
+auto orders/
+.vscode/
+
+requirements.txt
+*.bat
+*.sh
+
+__pycache__/
+*.pyc
+
+site/
+
+.DS_Store
+
+.docs/.obsidian

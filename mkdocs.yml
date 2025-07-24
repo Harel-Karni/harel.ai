@@ -1,0 +1,78 @@
+site_name: Harel.AI
+site_url: https://harel.ai
+
+site_description: מדריך בעברית ל־Git ולכלים נוספים
+site_author: Harel Karni
+
+theme:
+  name: material
+  #favicon: favicon.svg
+  icon:
+    logo: material/compass
+    repo: material/github
+  custom_dir: overrides
+  language: he
+  direction: rtl
+  palette:
+    scheme: default
+    primary: indigo
+    accent: green
+    toggle:
+      icon: material/brightness-7
+      name: Switch to dark mode
+
+  font:
+    text: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif
+
+  features:
+    - toc.follow
+    - navigation.instant
+    - navigation.instant.progressive
+    - navigation.indexes
+    - navigation.blog
+    - navigation.path
+    - navigation.tracking
+    - navigation.prune
+    - navigation.expand
+    - navigation.expandable
+    - navigation.scroll
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - abbr
+  - attr_list
+  - md_in_html
+
+extra_javascript:
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+  - assets/javascripts/katex.js
+
+extra_css:
+  - assets/styles/extra.css
+  - https://unpkg.com/katex@0/dist/katex.min.css
+  - assets/styles/katex.css
+
+plugins:
+  - search
+  - macros
+  #- awesome-nav
+
+nav:
+  - ברוכים הבאים: index.md
+  - ניהול תיקי השקעות: 
+      - מבוא: portfolio-management/index.md
+      - מודלים לבחירת מניות:
+          - מבוא: stock-selection/index.md
+          - בחירת מניות ב AI: stock-selection/ai.md
+  - הסיכון:
+      - מבוא: Investment-risk/index.md
+      - הסיכון לא מה שחשבנו: Investment-risk/a.md
+  - אודות: about.md
