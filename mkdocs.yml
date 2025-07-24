@@ -67,12 +67,14 @@ plugins:
 
 nav:
   - ברוכים הבאים: index.md
-  - ניהול תיקי השקעות: 
-      - מבוא: portfolio-management/index.md
-      - מודלים לבחירת מניות:
-          - מבוא: stock-selection/index.md
-          - בחירת מניות ב AI: stock-selection/ai.md
+  #- ניהול תיקי השקעות:
+  #    - מבוא: portfolio-management/index.md
+  #    - מודלים לבחירת מניות:
+  #        - מבוא: stock-selection/index.md
+  #        - בחירת מניות ב AI: stock-selection/ai.md
   - הסיכון:
       - מבוא: Investment-risk/index.md
-      - הסיכון לא מה שחשבנו: Investment-risk/a.md
-  - אודות: about.md
+      - הבנת המונח סיכון בהשקעות: Investment-risk/intro.md
+      - סיכון מוחלט וסיכון יחסי : Investment-risk/absolute-and-relative-investment-risk.md
+
+  #- אודות: about.md
