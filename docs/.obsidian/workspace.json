@@ -197,8 +197,19 @@
       "command-palette:פתח את לוח הפקודות": false
     }
   },
-  "active": "ee114f0c5204ada6",
+  "active": "97b4e4a792001b9f",
   "lastOpenFiles": [
+    "assets/javascripts/katex.mjs",
+    "assets/javascripts/auto-render.js",
+    "assets/styles/katex.min.css",
+    "assets/javascripts/katex.min.js",
+    "assets/fonts/katex/KaTeX_Size2-Regular.woff",
+    "assets/fonts/katex/KaTeX_Size2-Regular.woff2",
+    "assets/fonts/katex/KaTeX_Script-Regular.woff2",
+    "assets/fonts/katex/KaTeX_SansSerif-Regular.woff",
+    "assets/fonts/katex/KaTeX_SansSerif-Regular.woff2",
+    "assets/fonts/katex/KaTeX_Script-Regular.woff",
+    "assets/fonts/katex/KaTeX_Size3-Regular.woff2",
     "Investment-risk/absolute-and-relative-investment-risk.md",
     "Investment-risk/index.md",
     "Investment-risk/intro.md",
@@ -220,9 +231,6 @@
     "assets/images/risk_vs_return_of_Investment_types.png",
     "Investment-risk/3. risk.md",
     "stock-selection/index.md",
-    "stock-selection",
-    "decision-making-under-uncertainty",
-    "uncertainty",
     "portfolio-management/index.md",
     "portfolio-management/allocation/black-litterman.md",
     "portfolio-management/allocation/markowitz.md",
@@ -232,12 +240,7 @@
     "portfolio-management/allocation/ללא כותרת.md",
     "Advances in Financial Machine Learning/1. מבוא.md",
     "portfolio-management/allocation/index.md",
-    "portfolio-management/allocation",
-    "technological-appendix",
     "fundamentals/market-history.md",
-    "fundamentals/1. introduction.md",
-    "Investment-risk",
-    "technological-appendix/book/image.png",
-    "assets/images"
+    "technological-appendix/book/image.png"
   ]
 }

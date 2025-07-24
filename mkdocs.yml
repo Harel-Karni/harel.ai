@@ -41,23 +41,23 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - abbr
+  - attr_list
+  - md_in_html
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-  - abbr
-  - attr_list
-  - md_in_html
 
 extra_javascript:
-  - https://unpkg.com/katex@0/dist/katex.min.js
-  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
-  - assets/javascripts/katex.js
+  - assets/javascripts/katex.min.js
+  - assets/javascripts/auto-render.min.js
+  - assets/javascripts/katex-init.js
 
 extra_css:
   - assets/styles/extra.css
-  - https://unpkg.com/katex@0/dist/katex.min.css
+  - assets/styles/katex.min.css
   - assets/styles/katex.css
 
 plugins:
@@ -75,7 +75,7 @@ nav:
   - הסיכון:
       - מבוא: Investment-risk/index.md
       - הבנת המונח סיכון בהשקעות: Investment-risk/intro.md
-      - סיכון מוחלט וסיכון יחסי : Investment-risk/absolute-and-relative-investment-risk.md
+      - סיכון מוחלט וסיכון יחסי: Investment-risk/absolute-and-relative-investment-risk.md
       - מדדים להערכת סיכון: Investment-risk/measures.md
 
   #- אודות: about.md
