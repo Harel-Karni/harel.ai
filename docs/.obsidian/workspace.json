@@ -197,8 +197,12 @@
       "command-palette:פתח את לוח הפקודות": false
     }
   },
-  "active": "97b4e4a792001b9f",
+  "active": "ee114f0c5204ada6",
   "lastOpenFiles": [
+    "Investment-risk/absolute-and-relative-investment-risk.md",
+    "Investment-risk/measures.md",
+    "Investment-risk/index.md",
+    "Investment-risk/intro.md",
     "assets/javascripts/katex.mjs",
     "assets/javascripts/auto-render.js",
     "assets/styles/katex.min.css",
@@ -209,13 +213,8 @@
     "assets/fonts/katex/KaTeX_SansSerif-Regular.woff",
     "assets/fonts/katex/KaTeX_SansSerif-Regular.woff2",
     "assets/fonts/katex/KaTeX_Script-Regular.woff",
-    "assets/fonts/katex/KaTeX_Size3-Regular.woff2",
-    "Investment-risk/absolute-and-relative-investment-risk.md",
-    "Investment-risk/index.md",
-    "Investment-risk/intro.md",
     "Investment-risk/a.md",
     "Investment-risk/c.md",
-    "Investment-risk/measures.md",
     "index.md",
     "Investment-risk/e.md",
     "Pasted image 20250712210120.png",
