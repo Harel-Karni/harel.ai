@@ -1,7 +1,7 @@
 site_name: Harel.AI
 site_url: https://harel.ai
 
-site_description: מדריך בעברית ל־Git ולכלים נוספים
+site_description: מדריך להשקעות בעזרת AI
 site_author: Harel Karni
 
 theme:
@@ -62,7 +62,8 @@ extra_css:
 
 plugins:
   - search
-  - macros
+  - macros 
+        
   #- awesome-nav
 
 nav:
@@ -80,5 +81,7 @@ nav:
       - ניתוח תרחישים: Investment-risk/scenario-analysis.md
       - ניתוח רגישויות: Investment-risk/sensitivity-analysis.md
       - תיאבון וסבילות לסיכון: Investment-risk/risk-appetite.md
+      - היחס בין סיכון לסיכוי: Investment-risk/risk-reward.md
+      - הפתחחת סיכונים: Investment-risk/risk-reduction.md
 
-  #- אודות: about.md
+  - אודות: About/index.md

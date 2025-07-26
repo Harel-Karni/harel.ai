@@ -1,8 +1,7 @@
 def define_env(env):
-    @env.macro
-    def ignore(text):
-        return ""
-
+    """
+    This is the hook for the variables, macros and filters.
+    """
     @env.macro
     def link_to(page_path, text=None, anchor=None):
         """
@@ -25,9 +24,20 @@ def define_env(env):
         return f'<a href="/{clean_path}">{icon_html} {text}</a>'
 
     @env.macro
-    def link_to_external(url, text):
+    def link_to_external(text, url):
         """
         External link with Material 'open in new' icon, opening in a new tab.
         """
         icon_html = ":open_in_new:"
         return f'<a href="{url}" target="_blank" rel="noopener">{icon_html} {text}</a>'
+    
+    @env.macro
+    def ignore(text):
+        return ""
+        
+    @env.macro
+    def under_construction():
+        return '''!!! pied-piper "יש למה לצפות"
+    דף זה תחת בניה </br>
+    נשוב בקרוב
+    '''

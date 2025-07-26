@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Investment-risk/a.md",
+                "file": "about/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "a"
+              "title": "index"
             }
           }
         ]
@@ -171,26 +171,28 @@
   },
   "active": "ce0b7a50eb317dd5",
   "lastOpenFiles": [
+    "plugins/__init__.py",
+    "plugins/under_construction.py",
+    "plugins/under-construction.py",
+    "plugins/utils.py",
+    "plugins/custom_links.py",
+    "plugins/main.py",
+    "plugins",
+    "Investment-risk/risk-reward.md",
+    "about/index.md",
+    "about",
+    "Investment-risk/risk-appetite.md",
+    "Investment-risk/risk-reduction.md",
     "Investment-risk/scenario-analysis.md",
     "index.md",
-    "Investment-risk/a.md",
     "Investment-risk/absolute-and-relative-investment-risk.md",
-    "Investment-risk/e.md",
     "Investment-risk/index.md",
     "Investment-risk/intro.md",
     "Investment-risk/measures.md",
-    "Investment-risk/risk-appetite.md",
     "Investment-risk/sensitivity-analysis.md",
     "assets/javascripts/katex.mjs",
     "assets/javascripts/auto-render.js",
     "assets/styles/katex.min.css",
-    "assets/javascripts/katex.min.js",
-    "assets/fonts/katex/KaTeX_Size2-Regular.woff",
-    "assets/fonts/katex/KaTeX_Size2-Regular.woff2",
-    "assets/fonts/katex/KaTeX_Script-Regular.woff2",
-    "assets/fonts/katex/KaTeX_SansSerif-Regular.woff",
-    "assets/fonts/katex/KaTeX_SansSerif-Regular.woff2",
-    "assets/fonts/katex/KaTeX_Script-Regular.woff",
     "Pasted image 20250712210120.png",
     "uncertainty/index.md",
     "Pasted image 20250719132711.png",
@@ -211,8 +213,6 @@
     "portfolio-management/allocation/robust-ptimization.md",
     "portfolio-management/allocation/ללא כותרת.md",
     "Advances in Financial Machine Learning/1. מבוא.md",
-    "portfolio-management/allocation/index.md",
-    "fundamentals/market-history.md",
     "technological-appendix/book/image.png"
   ]
 }
