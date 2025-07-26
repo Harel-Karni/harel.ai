@@ -14,7 +14,8 @@ __pycache__/
 site/
 
 .DS_Store
-
+.obsidian
 .docs/.obsidian
+
 
 #https://Harel-Karni.github.io/harel.ai/
