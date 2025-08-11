@@ -47,8 +47,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=system-ui,+'Segoe+UI',+Roboto,+'Helvetica+Neue',+Arial,+sans-serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
@@ -70,6 +70,8 @@
   
     
     
+      
+    
     
     
     
@@ -89,6 +91,29 @@
     </div>
     <div data-md-component="announce">
       
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="לא להציג את זה שוב">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+<div class="banner__text">
+    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+        <path
+            d="M756-120 537-339l84-84 219 219-84 84Zm-552 0-84-84 276-276-68-68-28 28-51-51v82l-28 28-121-121 28-28h82l-50-50 142-142q20-20 43-29t47-9q24 0 47 9t43 29l-92 92 50 50-28 28 68 68 90-90q-4-11-6.5-23t-2.5-24q0-59 40.5-99.5T701-841q15 0 28.5 3t27.5 9l-99 99 72 72 99-99q7 14 9.5 27.5T841-701q0 59-40.5 99.5T701-561q-12 0-24-2t-23-7L204-120Z" />
+    </svg>
+    <span>הסבלנות משתלמת... האתר בבניה בימים אלה :)</span>
+</div>
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
     </div>
     
     
@@ -96,7 +121,7 @@
 
   
 
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="כותרת עליונה">
     <a href="../.." title="Harel.AI" class="md-header__button md-logo" aria-label="Harel.AI" data-md-component="logo">
       
@@ -126,7 +151,33 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="green"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -173,13 +224,109 @@
     
   </nav>
   
+    
+      
+<nav class="md-tabs" aria-label="לשוניות" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ברוכים הבאים
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  הסיכון
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Investment-portfolio-models/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  מודלים לניהול תיקי השקעות
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../About/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  אודות
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -193,8 +340,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="ניווט" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ניווט" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Harel.AI" class="md-nav__button md-logo" aria-label="Harel.AI" data-md-component="logo">
       
@@ -263,10 +412,16 @@
     
     
     
+      
+        
+        
+      
+      
+    
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
@@ -287,7 +442,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -388,21 +543,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="סיכון מוחלט: התנודתיות של הנכס בפני עצמו">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      מדידה
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -411,30 +551,6 @@
       סיכון יחסי: ביצועים בהשוואה לאחרים
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="סיכון יחסי: ביצועים בהשוואה לאחרים">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      דוגמאות של גורמי ייחוס:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      מדידה
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -607,9 +723,95 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../About/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Investment-portfolio-models/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    מודלים לניהול תיקי השקעות
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../About/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -618,7 +820,13 @@
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -656,21 +864,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="סיכון מוחלט: התנודתיות של הנכס בפני עצמו">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      מדידה
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -679,30 +872,6 @@
       סיכון יחסי: ביצועים בהשוואה לאחרים
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="סיכון יחסי: ביצועים בהשוואה לאחרים">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      דוגמאות של גורמי ייחוס:
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      מדידה
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -741,7 +910,7 @@
 <p>המדד המרכזי והנפוץ ביותר להערכת סיכון מוחלט הוא <strong>סטיית התקן</strong> של תשואות ההשקעה. סטיית התקן מודדת את פיזור התשואות של הנכס סביב התשואה הממוצעת שלו לאורך זמן. במילים פשוטות, היא מראה לנו כמה "מתנדנד" הנכס.</p>
 <ul>
 <li>
-<p><strong>סטיית תקן גבוהה</strong> משמעותה שהנכס חווה תנודות גדולות יותר – הן מעלה והן מטה – סביב הממוצע, ולכן חוסר הוודאות לגבי התשואה העתידית שלו גבוה יותר.</p>
+<p><strong>סטיית תקן גבוהה</strong> משמעותה שהנכס חווה תנודות גדולות יותר - הן מעלה והן מטה - סביב הממוצע, ולכן חוסר הוודאות לגבי התשואה העתידית שלו גבוה יותר.</p>
 </li>
 <li>
 <p><strong>סטיית תקן נמוכה</strong> מצביעה על נכס יציב יותר, עם תנודות קטנות יותר.</p>
@@ -793,7 +962,7 @@
 <p><strong>בטא נמוכה מ-1 (לדוגמה, 0.7):</strong> נכס עם בטא נמוכה נחשב ל<strong>תנודתי פחות מהשוק</strong>. הוא ינוע רק ב-0.7% עבור כל 1% תנועה בשוק. נכסים אלו יכולים לסייע בהפחתת תנודתיות התיק הכוללת ולהתאים למשקיעים שמעדיפים יציבות יחסית.</p>
 </li>
 <li>
-<p><strong>בטא שלילית:</strong> מצב זה נדיר יחסית, אך הוא מצביע על כך שהנכס נוטה לנוע <strong>בכיוון הפוך לשוק</strong>. לדוגמה היפותטית, לעיתים זהב או אגרות חוב ממשלתיות נחשבים לנכסי "מקלט בטוח" ועשויים להציג מתאם שלילי לשוק המניות בתקופות מסוימות – כשהשוק יורד, הם עשויים לעלות.</p>
+<p><strong>בטא שלילית:</strong> מצב זה נדיר יחסית, אך הוא מצביע על כך שהנכס נוטה לנוע <strong>בכיוון הפוך לשוק</strong>. לדוגמה היפותטית, לעיתים זהב או אגרות חוב ממשלתיות נחשבים לנכסי "מקלט בטוח" ועשויים להציג מתאם שלילי לשוק המניות בתקופות מסוימות - כשהשוק יורד, הם עשויים לעלות.</p>
 </li>
 </ul>
 <h2 id="_7">למה ההבחנה הזו חשובה?</h2>
@@ -803,7 +972,7 @@
 <p><strong>סיכון מוחלט</strong> רלוונטי במיוחד להבנת <strong>כמה</strong> התיק מסוכן <strong>בפני עצמו</strong>. לדוגמה, סטיית תקן של 10% לעומת 5% מצביעה על תיק תנודתי בהרבה, ללא קשר לשוק. מדד זה חשוב למשקיע הממוצע שרוצה לדעת מהי רמת התנודתיות הכוללת של התיק שלו ומהו הסיכוי לחריגה גדולה מהציפיות.</p>
 </li>
 <li>
-<p><strong>סיכון יחסי</strong> רלוונטי במיוחד ל<strong>מנהלי השקעות מקצועיים</strong> הבוחנים את ביצועי התיק שלהם לעומת מדד ייחוס. הם שואלים: "האם התיק שלי מסוכן יותר או פחות מהשוק שאני מנסה לנצח, וכיצד הוא מתנהג ביחס אליו?" – לשם כך הם יבחנו את הבטא של התיק (סיכון יחסי).</p>
+<p><strong>סיכון יחסי</strong> רלוונטי במיוחד ל<strong>מנהלי השקעות מקצועיים</strong> הבוחנים את ביצועי התיק שלהם לעומת מדד ייחוס. הם שואלים: "האם התיק שלי מסוכן יותר או פחות מהשוק שאני מנסה לנצח, וכיצד הוא מתנהג ביחס אליו?" - לשם כך הם יבחנו את הבטא של התיק (סיכון יחסי).</p>
 </li>
 </ul>
 <p>לסיכום, מנהלי השקעות מנוסים משתמשים בשני סוגי המדדים באופן משלים: מדדי סיכון מוחלט מסייעים להם להעריך את פוטנציאל התנודה וההפסד בטווח אבסולוטי, בעוד שמדדי סיכון יחסי מאפשרים להם להעריך את סטיית התיק מן ההתנהגות השוקית ולהבין טוב יותר את ביצועי התיק בנטרול סיכון ביחס למדד ההשוואה. הבנה מעמיקה של שני המושגים הללו היא המפתח להשקעה חכמה ובטוחה יותר.</p>
@@ -827,27 +996,82 @@
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  חזרה למעלה
+</button>
+        
       </main>
       
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="כותרת תחתונה" >
         
-<div class="md-footer">
-    <div class="md-footer-meta">
-        <div class="md-footer-copyright">
-            &copy; 2025 הראל 
-        </div>
+          
+          <a href="../intro/" class="md-footer__link md-footer__link--prev" aria-label="הקודם: הבנת המונח סיכון בהשקעות">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                הקודם
+              </span>
+              <div class="md-ellipsis">
+                הבנת המונח סיכון בהשקעות
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../measures/" class="md-footer__link md-footer__link--next" aria-label="הבא: מדדים להערכת סיכון">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                הבא
+              </span>
+              <div class="md-ellipsis">
+                מדדים להערכת סיכון
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Harel Karni
     </div>
+  
+  
 </div>
-
+      
+    </div>
+  </div>
+</footer>
       
     </div>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["toc.follow", "navigation.instant", "navigation.instant.progressive", "navigation.indexes", "navigation.blog", "navigation.path", "navigation.tracking", "navigation.prune", "navigation.expand", "navigation.expandable", "navigation.scroll"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u05d4\u05d5\u05e2\u05ea\u05e7 \u05dc\u05dc\u05d5\u05d7", "clipboard.copy": "\u05d4\u05e2\u05ea\u05e7\u05d4 \u05dc\u05dc\u05d5\u05d7", "search.result.more.one": "\u05e2\u05d5\u05d3 \u05d0\u05d7\u05d3 \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.more.other": "\u05e2\u05d5\u05d3 # \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.none": "\u05d0\u05d9\u05df \u05de\u05e1\u05de\u05db\u05d9\u05dd \u05ea\u05d5\u05d0\u05de\u05d9\u05dd", "search.result.one": "\u05de\u05e1\u05de\u05da1 \u05ea\u05d5\u05d0\u05dd", "search.result.other": "# \u05de\u05e1\u05de\u05da \u05ea\u05d5\u05d0\u05dd", "search.result.placeholder": "\u05d9\u05e9 \u05dc\u05d4\u05e7\u05dc\u05d9\u05d3 \u05db\u05d3\u05d9 \u05dc\u05d4\u05ea\u05d7\u05d9\u05dc \u05dc\u05d7\u05e4\u05e9", "search.result.term.missing": "\u05d7\u05e1\u05e8", "select.version": "\u05d1\u05d7\u05d9\u05e8\u05ea \u05d2\u05e8\u05e1\u05d4"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["toc.follow", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.path", "navigation.tracking", "navigation.prune", "navigation.expand", "navigation.top", "navigation.footer", "content.tooltips", "header.autohide", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u05d4\u05d5\u05e2\u05ea\u05e7 \u05dc\u05dc\u05d5\u05d7", "clipboard.copy": "\u05d4\u05e2\u05ea\u05e7\u05d4 \u05dc\u05dc\u05d5\u05d7", "search.result.more.one": "\u05e2\u05d5\u05d3 \u05d0\u05d7\u05d3 \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.more.other": "\u05e2\u05d5\u05d3 # \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.none": "\u05d0\u05d9\u05df \u05de\u05e1\u05de\u05db\u05d9\u05dd \u05ea\u05d5\u05d0\u05de\u05d9\u05dd", "search.result.one": "\u05de\u05e1\u05de\u05da1 \u05ea\u05d5\u05d0\u05dd", "search.result.other": "# \u05de\u05e1\u05de\u05da \u05ea\u05d5\u05d0\u05dd", "search.result.placeholder": "\u05d9\u05e9 \u05dc\u05d4\u05e7\u05dc\u05d9\u05d3 \u05db\u05d3\u05d9 \u05dc\u05d4\u05ea\u05d7\u05d9\u05dc \u05dc\u05d7\u05e4\u05e9", "search.result.term.missing": "\u05d7\u05e1\u05e8", "select.version": "\u05d1\u05d7\u05d9\u05e8\u05ea \u05d2\u05e8\u05e1\u05d4"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
@@ -857,6 +1081,10 @@
         <script src="../../assets/javascripts/auto-render.min.js"></script>
       
         <script src="../../assets/javascripts/katex-init.js"></script>
+      
+        <script src="../../assets/javascripts/tablesort.min.js"></script>
+      
+        <script src="../../assets/javascripts/tablesort.js"></script>
       
     
   </body>

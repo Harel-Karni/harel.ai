@@ -1,0 +1,1500 @@
+
+<!doctype html>
+<html lang="he" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="מדריך להשקעות בעזרת AI">
+      
+      
+        <meta name="author" content="Harel Karni">
+      
+      
+        <link rel="canonical" href="https://harel.ai/Investment-portfolio-models/mean_variance_optimization/">
+      
+      
+        <link rel="prev" href="../intro/">
+      
+      
+        <link rel="next" href="../capm/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>מודל מרקוביץ - Harel.AI</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/styles/extra.css">
+    
+      <link rel="stylesheet" href="../../assets/styles/katex.min.css">
+    
+      <link rel="stylesheet" href="../../assets/styles/katex.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="rtl" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#markowitz_model" class="md-skip">
+          לדלג לתוכן
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="לא להציג את זה שוב">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+<div class="banner__text">
+    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+        <path
+            d="M756-120 537-339l84-84 219 219-84 84Zm-552 0-84-84 276-276-68-68-28 28-51-51v82l-28 28-121-121 28-28h82l-50-50 142-142q20-20 43-29t47-9q24 0 47 9t43 29l-92 92 50 50-28 28 68 68 90-90q-4-11-6.5-23t-2.5-24q0-59 40.5-99.5T701-841q15 0 28.5 3t27.5 9l-99 99 72 72 99-99q7 14 9.5 27.5T841-701q0 59-40.5 99.5T701-561q-12 0-24-2t-23-7L204-120Z" />
+    </svg>
+    <span>הסבלנות משתלמת... האתר בבניה בימים אלה :)</span>
+</div>
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="כותרת עליונה">
+    <a href="../.." title="Harel.AI" class="md-header__button md-logo" aria-label="Harel.AI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.19 14.19 6 18l3.81-8.19L18 6m-6-4A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 8.9a1.1 1.1 0 0 0-1.1 1.1 1.1 1.1 0 0 0 1.1 1.1 1.1 1.1 0 0 0 1.1-1.1 1.1 1.1 0 0 0-1.1-1.1"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Harel.AI
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              מודל מרקוביץ
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="green"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="חיפוש" placeholder="חיפוש" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="חיפוש">
+        
+        <button type="reset" class="md-search__icon md-icon" title="ניקוי" aria-label="ניקוי" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            אתחול חיפוש
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="לשוניות" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ברוכים הבאים
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Investment-risk/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  הסיכון
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  מודלים לניהול תיקי השקעות
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../About/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  אודות
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ניווט" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Harel.AI" class="md-nav__button md-logo" aria-label="Harel.AI" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.19 14.19 6 18l3.81-8.19L18 6m-6-4A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 8.9a1.1 1.1 0 0 0-1.1 1.1 1.1 1.1 0 0 0 1.1 1.1 1.1 1.1 0 0 0 1.1-1.1 1.1 1.1 0 0 0-1.1-1.1"/></svg>
+
+    </a>
+    Harel.AI
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ברוכים הבאים
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Investment-risk/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    הסיכון
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    מודלים לניהול תיקי השקעות
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            מודלים לניהול תיקי השקעות
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ניהול תיקי השקעות
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    מודל מרקוביץ
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    מודל מרקוביץ
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#principals" class="md-nav__link">
+    <span class="md-ellipsis">
+      עקרונות המודל
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formal_definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      הגדרה פורמאלית
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="הגדרה פורמאלית">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expected_return" class="md-nav__link">
+    <span class="md-ellipsis">
+      תשואה צפויה לתיק השקעות
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portfolio_risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      סיכון התיק
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#efficient_frontier" class="md-nav__link">
+    <span class="md-ellipsis">
+      הגבול היעיל
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diversification_effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      השפעת הפיזור
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cml_line" class="md-nav__link">
+    <span class="md-ellipsis">
+      שילוב עם נכס חסר סיכון
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pros_cons" class="md-nav__link">
+    <span class="md-ellipsis">
+      יתרונות וחסרונות המודל
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="יתרונות וחסרונות המודל">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pros" class="md-nav__link">
+    <span class="md-ellipsis">
+      יתרונות
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cons" class="md-nav__link">
+    <span class="md-ellipsis">
+      חסרונות
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      דוגמאות
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="דוגמאות">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      דוגמה א: השפעת הפיזור
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      דוגמה ב: שילוב נתוני תשואה וקורלציה
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../capm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CAPM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../apt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    APT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../About/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    אודות
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="תוכן העניינים">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      תוכן העניינים
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#principals" class="md-nav__link">
+    <span class="md-ellipsis">
+      עקרונות המודל
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formal_definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      הגדרה פורמאלית
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="הגדרה פורמאלית">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#expected_return" class="md-nav__link">
+    <span class="md-ellipsis">
+      תשואה צפויה לתיק השקעות
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portfolio_risk" class="md-nav__link">
+    <span class="md-ellipsis">
+      סיכון התיק
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#efficient_frontier" class="md-nav__link">
+    <span class="md-ellipsis">
+      הגבול היעיל
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diversification_effect" class="md-nav__link">
+    <span class="md-ellipsis">
+      השפעת הפיזור
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cml_line" class="md-nav__link">
+    <span class="md-ellipsis">
+      שילוב עם נכס חסר סיכון
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pros_cons" class="md-nav__link">
+    <span class="md-ellipsis">
+      יתרונות וחסרונות המודל
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="יתרונות וחסרונות המודל">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pros" class="md-nav__link">
+    <span class="md-ellipsis">
+      יתרונות
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cons" class="md-nav__link">
+    <span class="md-ellipsis">
+      חסרונות
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      דוגמאות
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="דוגמאות">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      דוגמה א: השפעת הפיזור
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      דוגמה ב: שילוב נתוני תשואה וקורלציה
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="markowitz_model">מודל מרקוביץ</h1>
+<p><strong>מודל מרקוביץ'</strong> הוא אחד מאבני היסוד החשובות ביותר בתורת ההשקעות המודרנית (Modern Portfolio Theory – MPT). המודל פותח בשנת 1952 על ידי הכלכלן <strong>הארי מרקוביץ'</strong> אשר זכה על כך בפרס נובל לכלכלה בשנת 1990. המודל מבסס פתרון מתמטי לבניית תיקי השקעות אופטימליים תוך איזון בין <strong>תשואה צפויה</strong> לבין <strong>סיכון</strong> (המבוטא במונחי סטיית תקן) <strong>בהתאם להעדפת המשקיע</strong>. המודל מדגים כיצד ניתן להפחית סיכון באמצעות <strong>פיזור</strong> נכון.</p>
+<p>לא מעט רואים במודל מרקוביץ' את אחד המודלים החשובים לניהול תיקי השקעות מכיוון שזו הייתה הפעם הראשונה בה הוצע מודל שבו הסיכון ניתן להגדרה פורמאלית ולמדידה אמפירית.</p>
+<p>כפי שנראה בהמשך, מודל זה אינו חף ממגבלות. יחד עם זאת- שילוב העקרונות שנטבעו בו (סיכון, קורלציה, פיזור) מהווים בסיס לתאוריות ניהול תיקים מאוחרות יותר ואף ישמשו אותנו במודל ה AI שלנו.</p>
+<hr />
+<h2 id="principals">עקרונות המודל</h2>
+<p>מודל מרקוביץ' מבוסס על מספר הנחות יסוד:</p>
+<ul>
+<li><strong>משקיעים פועלים רציונלית</strong> – הם שואפים למקסם תשואה צפויה ולמזער סיכון.</li>
+<li><strong>הסיכון נמדד באמצעות סטיית תקן</strong> – כלומר, תנודתיות התשואות.</li>
+<li><strong>התשואות מנורמלות</strong> – מניחים כי התשואות מתפלגות נורמלית.</li>
+<li><strong>אין עלויות עסקה או מיסוי</strong> (בגרסה הבסיסית של המודל).</li>
+<li><strong>תקופת השקעה חד- פעמית</strong> – המודל עוסק בניתוח סטטי - cנקודת זמן אחת.</li>
+</ul>
+<h2 id="formal_definition">הגדרה פורמאלית</h2>
+<h3 id="expected_return">תשואה צפויה לתיק השקעות</h3>
+<p>התשואה הצפויה לתיק היא ממוצע משוקלל של התשואות הצפויות של הנכסים:</p>
+<div class="arithmatex">\[
+E(R_p) = \sum_{i=1}^{n} w_i \cdot E(R_i)
+\]</div>
+<p>כאשר:</p>
+<ul>
+<li><span class="arithmatex">\(E(R_p)\)</span> – התשואה הצפויה לתיק.</li>
+<li><span class="arithmatex">\(w_i\)</span> – המשקל של נכס <span class="arithmatex">\(i\)</span> בתיק (סכום המשקולות = 1).</li>
+<li><span class="arithmatex">\(E(R_i)\)</span> – התשואה הצפויה של נכס <span class="arithmatex">\(i\)</span>.</li>
+</ul>
+<h3 id="portfolio_risk">סיכון התיק</h3>
+<p>בניגוד לחשיבה אינטואיטיבית, הסיכון הכולל של התיק <strong>אינו רק ממוצע סטיות התקן</strong> של הנכסים, אלא תלוי גם <strong>במתאם</strong> ביניהם:</p>
+<div class="arithmatex">\[
+\sigma_p = \sqrt{\sum_{i=1}^{n} \sum_{j=1}^{n} w_i w_j \cdot \text{Cov}(R_i, R_j)}
+\]</div>
+<p>כאשר:</p>
+<ul>
+<li><span class="arithmatex">\(\sigma_p\)</span> – סטיית התקן של התיק.</li>
+<li><span class="arithmatex">\(\text{Cov}(R_i, R_j)\)</span> – השונות המשותפת (Covariance) בין נכס <span class="arithmatex">\(i\)</span> לנכס <span class="arithmatex">\(j\)</span>.</li>
+</ul>
+<p>במקרה של שני נכסים בלבד:</p>
+<div class="arithmatex">\[
+\sigma_p = \sqrt{w_1^2\sigma_1^2 + w_2^2\sigma_2^2 + 2w_1w_2 \rho_{12}\sigma_1\sigma_2}
+\]</div>
+<p>כאשר <span class="arithmatex">\(\rho_{12}\)</span> הוא מקדם המתאם בין שני הנכסים.</p>
+<h2 id="efficient_frontier">הגבול היעיל</h2>
+<p>באמצעות חישוב כל שילובי הנכסים האפשריים (משקולות <span class="arithmatex">\(w_i\)</span>), ניתן לשרטט את <strong>עקום הגבול היעיל (Efficient Frontier)</strong> :</p>
+<ul>
+<li>זהו קו המייצג את התיקים האופטימליים שנותנים <strong>תשואה מקסימלית לכל רמת סיכון נתונה</strong> או <strong>סיכון מינימלי לכל רמת תשואה נתונה</strong>.</li>
+<li>תיקים מתחת לקו זה נחשבים <strong>לא יעילים</strong>, ותיקים מעל הקו אינם אפשריים (מבחינה מתמטית).</li>
+</ul>
+<h2 id="diversification_effect">השפעת הפיזור</h2>
+<p>אחת המסקנות המרכזיות של מרקוביץ' היא כי שילוב של נכסים שאינם מושלמים בקורלציה (כלומר <span class="arithmatex">\(\rho &lt; 1\)</span>) מפחית את הסיכון הכולל של התיק <strong>ללא פגיעה בתשואה הצפויה</strong>.</p>
+<ul>
+<li>אם הקורלציה בין הנכסים נמוכה (או שלילית), ניתן להשיג <strong>פיזור יעיל</strong> שמקטין תנודתיות.</li>
+<li>אם הקורלציה גבוהה (קרובה ל- 1), הפיזור כמעט ואינו תורם להפחתת הסיכון.</li>
+</ul>
+<h2 id="cml_line">שילוב עם נכס חסר סיכון</h2>
+<p>בהמשך פותח הרעיון לשילוב <strong>נכס חסר סיכון</strong> (כמו אג"ח ממשלתית קצרה) בשילוב תיק השוק היעיל:</p>
+<ul>
+<li>קו זה נקרא "קו השוק" <strong>Capital Market Line (CML)</strong>.</li>
+<li>כל משקיע בוחר נקודה על הקו לפי העדפותיו בין סיכון לתשואה:</li>
+<li>משקיע סולידי – קרוב יותר לנכס חסר סיכון.</li>
+<li>משקיע אגרסיבי – ייעזר במינוף כדי לעבור את תיק השוק.</li>
+</ul>
+<h2 id="pros_cons">יתרונות וחסרונות המודל</h2>
+<h3 id="pros">יתרונות</h3>
+<ul>
+<li>מסגרת מתמטית ברורה לבניית תיקי השקעות.</li>
+<li>מדגיש את חשיבות הפיזור והמתאם בין הנכסים.</li>
+<li>מהווה בסיס לפיתוחים כמו CAPM, VaR ורבים אחרים.</li>
+</ul>
+<h3 id="cons">חסרונות</h3>
+<ul>
+<li>הנחות לא ריאליות (התפלגות נורמלית, רציונליות מוחלטת).</li>
+<li>קשה לאמוד במדויק את הקורלציות והתשואות העתידיות.</li>
+<li>אינו מתחשב באסימטריה או "זנבות שמנים" בשווקים אמיתיים.</li>
+<li>המודל סובל מרגישות רבה לקורלציה</li>
+</ul>
+<p>נקודה חשובה שאליה אנו חייבים לשים לב :</p>
+<p>מודל מרקוביץ הוא הוא מודל <strong>נורמטיבי</strong> בכך שהוא <strong>מניח</strong> כי אלו הפרמטרים לפיהם אדם רציונלי צריך לבחור את תיק ההשקעה שלו. המודל <strong>מניח</strong> שהפרמטרים העומדים בתשתית בחירת ההשקעה של האדם הרציונלי הם: תוחלת הרווח וסטיית תקן ובנוסף - שיקולי הבחירה שלו הם- שהוא שונא סיכון. בעוד אלו הנחות סבירות למדי - המודל איננו קובע מה צריך להיות קשר הגומלין בין פרמטרים אלו.</p>
+<h2 id="examples">דוגמאות</h2>
+<h3 id="example_1">דוגמה א: השפעת הפיזור</h3>
+<p>נניח שני נכסים:</p>
+<ul>
+<li>נכס A: תשואה צפויה 8%, סטיית תקן 10%.</li>
+<li>נכס B: תשואה צפויה 12%, סטיית תקן 20%.</li>
+<li>מתאם ביניהם: <span class="arithmatex">\(\rho = 0.2\)</span>.</li>
+</ul>
+<p>אם נשקיע 50% בכל נכס:</p>
+<div class="arithmatex">\[
+E(R_p) = 0.5 \cdot 8\% + 0.5 \cdot 12\% = 10\%
+\]</div>
+<div class="arithmatex">\[
+\begin{aligned}
+E(R_p) &amp;= 0.5 \cdot 8\% + 0.5 \cdot 12\% = 10\% \\[1em]
+\sigma_p &amp;= (0.5^2 \cdot 10^2) + (0.5^2 \cdot 20^2) + 2 \cdot 0.5 \cdot 0.5 \cdot 0.2 \cdot 10 \cdot 2 \\
+&amp;= 25 + 100 + 20 \\
+&amp;= 145 \approx 12.04\%
+\end{aligned}
+\]</div>
+<p>בזכות הפיזור, סטיית התקן של התיק ירדה ל- 12.04%, נמוכה מממוצע הפשוט שלהן (15%)</p>
+<h3 id="example_2">דוגמה ב: שילוב נתוני תשואה וקורלציה</h3>
+<p>תיק השקעה כולל שלוש מניות: א', ב' ו - ג'. להלן נתונים נדרשים:</p>
+<h4 id="_1">נתוני המניות</h4>
+<table>
+<thead>
+<tr>
+<th>מניה</th>
+<th style="text-align: right;">תשואה צפויה <span class="arithmatex">\(E(R_i)\)</span></th>
+<th style="text-align: right;">סטיית תקן <span class="arithmatex">\(\sigma_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>א׳</strong></td>
+<td style="text-align: right;">8%</td>
+<td style="text-align: right;">15%</td>
+</tr>
+<tr>
+<td><strong>ב׳</strong></td>
+<td style="text-align: right;">10%</td>
+<td style="text-align: right;">18%</td>
+</tr>
+<tr>
+<td><strong>ג׳</strong></td>
+<td style="text-align: right;">12%</td>
+<td style="text-align: right;">22%</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_2">מטריצת קורלציית תשואות בין המניות</h4>
+<table>
+<thead>
+<tr>
+<th>מניה</th>
+<th style="text-align: right;">א׳</th>
+<th style="text-align: right;">ב׳</th>
+<th style="text-align: right;">ג׳</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>א׳</strong></td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.30</td>
+<td style="text-align: right;">0.20</td>
+</tr>
+<tr>
+<td><strong>ב׳</strong></td>
+<td style="text-align: right;">0.30</td>
+<td style="text-align: right;">1.00</td>
+<td style="text-align: right;">0.50</td>
+</tr>
+<tr>
+<td><strong>ג׳</strong></td>
+<td style="text-align: right;">0.20</td>
+<td style="text-align: right;">0.50</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_3">משקל המניות בתיק</h4>
+<div class="arithmatex">\[
+w_A=40\%,\quad w_B=30\%,\quad w_C=30\%
+\]</div>
+<h4 id="er_p">חישוב תשואת התיק הצפויה <span class="arithmatex">\(E(R_p)\)</span></h4>
+<p>תשואת התיק הצפויה היא ממוצע משוקלל של התשואות הצפויות של כל המניות בתיק.</p>
+<div class="arithmatex">\[
+\begin{aligned}
+E(R_p)&amp;=\sum_{i=1}^{3} w_i\,E(R_i) \\[1em]
+      &amp;= (w_A \times E(R_A)) + (w_B \times E(R_B)) + (w_C \times E(R_C)) \\[1em]
+      &amp;= 0.4\cdot 8\% + 0.3\cdot 10\% + 0.3\cdot 12\% \\[1em]
+      &amp;= {9.8\%}
+\end{aligned}
+\]</div>
+<h4 id="sigma_p2-sigma_p">חישוב השונות <span class="arithmatex">\(\sigma_p^2\)</span> וסטיית התקן <span class="arithmatex">\(\sigma_p\)</span> של התיק</h4>
+<p>סטיית התקן מודדת את הסיכון (תנודתיות) של התיק. </br>
+החישוב לוקח בחשבון הן את <strong>הסיכון</strong> של כל נכס והן את <strong>המתאם</strong> (קורלציה) בין הנכסים.</p>
+<p><strong>הנוסחה המלאה לשונות התיק:</strong></p>
+<div class="arithmatex">\[
+\begin{aligned}
+\sigma_p^{2} &amp;= {w}^\top\,\Sigma\, {w} \\[1em]
+         &amp;= w_A^2\sigma_A^2 + w_B^2\sigma_B^2 + w_C^2\sigma_C^2 +
+          2w_Aw_B\sigma_A\sigma_B\rho_{AB} + 2w_Aw_C\sigma_A\sigma_C\rho_{AC} + 2w_Bw_C\sigma_B\sigma_C\rho_{BC}
+\end{aligned}
+\]</div>
+<p><strong>השונות של כל מניה (משוקללת):</strong></p>
+<p><span class="arithmatex">\(w_A^2\sigma_A^2 = 0.40^2 \times 0.15^2 = 0.16 \times 0.0225 = 0.0036\)</span></p>
+<p><span class="arithmatex">\(w_B^2\sigma_B^2 = 0.30^2 \times 0.18^2 = 0.09 \times 0.0324 = 0.002916\)</span></p>
+<p><span class="arithmatex">\(w_C^2\sigma_C^2 = 0.30^2 \times 0.22^2 = 0.09 \times 0.0484 = 0.004356\)</span></p>
+<p><strong>השונות המשותפת (Covariance) בין כל זוג מניות:</strong></p>
+<p><span class="arithmatex">\(2w*Aw_B\sigma_A\sigma_B\rho*{AB} = 2 \times 0.40 \times 0.30 \times 0.15 \times 0.18 \times 0.30 = 0.00243\)</span></p>
+<p><span class="arithmatex">\(2w*Aw_C\sigma_A\sigma_C\rho*{AC} = 2 \times 0.40 \times 0.30 \times 0.15 \times 0.22 \times 0.20 = 0.001584\)</span></p>
+<p><span class="arithmatex">\(2w*Bw_C\sigma_B\sigma_C\rho*{BC} = 2 \times 0.30 \times 0.30 \times 0.18 \times 0.22 \times 0.50 = 0.003564\)</span></p>
+<p><strong>חיבור כל הרכיבים לשונות התיק:</strong></p>
+<div class="arithmatex">\[
+\sigma_p^2 = 0.0036 + 0.002916 + 0.004356 + 0.00243 + 0.001584 + 0.003564 = 0.01845
+\]</div>
+<p><strong>חישוב סטיית התקן (שורש השונות):</strong></p>
+<div class="arithmatex">\[
+\sigma_p = \sqrt{0.01845} \approx 0.1358
+\]</div>
+<ul>
+<li><strong>תשואת התיק הצפויה:</strong> <strong>9.8%</strong></li>
+<li><strong>סטיית התקן של התיק:</strong> <strong>13.58%</strong></li>
+</ul>
+<p>התוצאה מדגימה את <strong>עקרון הגיוון (diversification)</strong>.
+ממוצע משוקלל של סטיות התקן היה נותן סיכון של 18%, אך בזכות הקורלציה שאינה מושלמת בין המניות, הסיכון בפועל של התיק <strong>נמוך יותר</strong> באופן משמעותי.</p>
+<h4 id="_4">חישוב החזית היעילה</h4>
+<p>עד כה, חישבנו את את הסיכון בתיק ואת התשואה הצפויה בהתאם למשקל המניות - שהיה נתון לנו. </br>
+אי אפשר להראות את <strong>החזית היעילה</strong> של תיק המניות שלנו מחישוב משקולות של תיק בודד (כמו זה שחישבנו עם משקלות 40/30/30). החזית היעילה המחושבת צריכה להציג עבורנו את כל התיקים האופטימליים שניתן להרכיב מסל המניות בתיק.</p>
+<p>החזית היעילה היא <strong>עקומה גרפית</strong> המייצגת את כל התיקים ה<strong>אופטימליים</strong> שניתן להרכיב מהמניות בתיק ההשקעה. כל נקודה על העקומה הגרפית מציגה את <strong>התשואה הגבוהה ביותר לרמת סיכון נתונה.</strong></p>
+<h4 id="_5">איך בונים את החזית היעילה?</h4>
+<p>בניית הגרף נעשה באמצעות אופטימיזציה ממוחשבת במצודה הבאה:</p>
+<ol>
+<li>
+<p><strong>בניית צירופי משקלות ניירות בתיק:</strong> השלב הראשון הוא לתת למחשב לבנות אלפי צירופי משקלות שונים עבור המניות א', ב' ו-ג'.</p>
+<ul>
+<li>לדוגמה: (100%, 0%, 0%), (99%, 1%, 0%), (50%, 25%, 25%), (33.3%, 33.3%, 33.3%) וכו'. התנאי היחיד הוא שסך כל המשקלות יהיה תמיד 100%. (אגב, בהנתן היכולת למכור בחסר- ניתן גם להתעלם ממגבלה זו)</li>
+</ul>
+</li>
+<li>
+<p><strong>חישוב תשואה וסיכון לכל תיק:</strong> עבור <strong>כל אחד</strong> מאלפי הצירופים שנבחרו בשלב הראשון יש לחשב את הפרמטרים שחישבנו בחלק הקודם: שלמדנו:</p>
+<ul>
+<li>חישוב <strong>תשואה צפויה</strong> (<span class="arithmatex">\(E(R_p​)\)</span>)</li>
+<li>חישוב <strong>סטיית תקן</strong> (<span class="arithmatex">\(σ_p\)</span>​)</li>
+</ul>
+</li>
+<li>
+<p><strong>מיפוי התיקים על גרף:</strong> יוצרים גרף פיזור (Scatter Plot) שבו:</p>
+<ul>
+<li><strong>ציר X</strong> הוא הסיכון (סטיית תקן, <span class="arithmatex">\(σ_p\)</span>).</li>
+<li><strong>ציר Y</strong> הוא התשואה הצפויה (<span class="arithmatex">\(E(R_p​)\)</span>).</li>
+<li>כל נקודה בגרף מייצגת תיק אחד עם הרכב משקלות ספציפי.</li>
+</ul>
+</li>
+<li>
+<p><strong>זיהוי החזית היעילה:</strong> לאחר שכל הנקודות ממופות, "ענן" של נקודות יתקבל בגרף. <strong>החזית היעילה היא המעטפת העליונה-שמאלית של אותו ענן נקודות</strong>. זוהי העקומה שמחברת את כל התיקים שאין טובים מהם.</p>
+</li>
+<li>
+<p><strong>זיהוי נקודות עניין מיוחדות על החזית היעילה:</strong> על העקומה עצמה יש כמה תיקים בעלי חשיבות מיוחדת:</p>
+<ul>
+<li>
+<p><strong>תיק מינימום שונות (MVP - Minimum Variance Portfolio):</strong> זוהי הנקודה <strong>השמאלית ביותר</strong> על העקומה. זהו התיק בעל <strong>הסיכון הנמוך ביותר</strong> מכל התיקים האפשריים שניתן להרכיב מהמניות.</p>
+</li>
+<li>
+<p><strong>התיק המשיק (Tangency Portfolio):</strong> זהו התיק ה"כוכב" של החזית היעילה. זהו התיק שמציע את יחס התגמול-לסיכון הטוב ביותר, הנמדד על ידי <strong>יחס שארפ (Sharpe Ratio)</strong>. באופן גרפי, זהו התיק שבו קו ישר (CML) היוצא מנקודת "נכס חסר סיכון" (למשל, מק"מ) משיק לחזית היעילה. רוב מנהלי ההשקעות שואפים להחזיק בתיק זה ולשלב אותו עם הנכס חסר הסיכון.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>להלן הדגמה של חישוב החזית היעילה עם גרף "Efficient Frontier" בסימולציה ב-Python</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">מודל מרקוביץ- פלט</label><label for="__tabbed_1_2">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="efficient_frontier" src="../../assets/images/efficient_frontier.svg" />
+בגרף המתואר :</p>
+<ul>
+<li>
+<p><strong>הענן האפור</strong> מדגים את תוצאות צירופי כל המשקלים של המניות בתיק.</p>
+</li>
+<li>
+<p><strong>הקו האדום</strong> - "החזית היעילה" עקומה שמחברת את כל התיקים שאין טובים מהם. רק הצירופים מהנקודה הכחולה ומעלה על גבי הקו האדום - מהווים את החזית היעילה שבתיק. </p>
+</li>
+<li>
+<p><strong>הקו המקווקו הכחול</strong>: "קו השוק" <strong>(CML)</strong>. שילוב של נכס חסר סיכון בתיק </p>
+</li>
+<li>
+<p><strong>הנקודה הכחולה</strong>:  זהו התיק בעל <strong>הסיכון הנמוך ביותר</strong> מכל התיקים האפשריים שניתן להרכיב מהמניות (תיק MVP).</p>
+</li>
+<li>
+<p><strong>הכוכב</strong>: זהו התיק שמציע את יחס התגמול-לסיכון הטוב ביותר (Tangency Portfolio)</p>
+</li>
+</ul>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="c1"># === Inputs ===</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="c1"># Expected returns and volatilities (standard deviations)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">returns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="mf">0.12</span><span class="p">])</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">std_devs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">,</span> <span class="mf">0.22</span><span class="p">])</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="c1"># Correlation matrix between the assets</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.00</span><span class="p">,</span> <span class="mf">0.30</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.30</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">,</span> <span class="mf">0.50</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.20</span><span class="p">,</span> <span class="mf">0.50</span><span class="p">,</span> <span class="mf">1.00</span><span class="p">]])</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="c1"># Risk-free rate (for CML and tangency portfolio)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="n">rf</span> <span class="o">=</span> <span class="mf">0.02</span>  <span class="c1"># 2%</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="c1"># === Covariance matrix ===</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="c1"># Cov = D_sigma * Corr * D_sigma, here via outer product</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="n">cov_matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">outer</span><span class="p">(</span><span class="n">std_devs</span><span class="p">,</span> <span class="n">std_devs</span><span class="p">)</span> <span class="o">*</span> <span class="n">corr_matrix</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="c1"># === Generate long-only weight combinations (w1 + w2 + w3 = 1) ===</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>    <span class="n">weights_list</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="n">port_returns</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>    <span class="n">port_risks</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>    <span class="k">for</span> <span class="n">w1</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>        <span class="k">for</span> <span class="n">w2</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">w1</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>            <span class="n">w3</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">w1</span> <span class="o">-</span> <span class="n">w2</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>            <span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">w1</span><span class="p">,</span> <span class="n">w2</span><span class="p">,</span> <span class="n">w3</span><span class="p">])</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>            <span class="c1"># Portfolio return and standard deviation</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>            <span class="n">p_ret</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">weights</span><span class="p">,</span> <span class="n">returns</span><span class="p">)</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>            <span class="n">p_var</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">weights</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">cov_matrix</span><span class="p">,</span> <span class="n">weights</span><span class="p">))</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>            <span class="n">p_std</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">p_var</span><span class="p">)</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>            <span class="n">weights_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">weights</span><span class="p">)</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>            <span class="n">port_returns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p_ret</span><span class="p">)</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>            <span class="n">port_risks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">p_std</span><span class="p">)</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>    <span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">weights_list</span><span class="p">)</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>    <span class="n">port_returns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">port_returns</span><span class="p">)</span>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>    <span class="n">port_risks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">port_risks</span><span class="p">)</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>    <span class="c1"># === Efficient frontier (upper envelope by return for each risk) ===</span>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>    <span class="c1"># Sort by risk and keep points that improve max return seen so far</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>    <span class="n">order</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">port_risks</span><span class="p">)</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>    <span class="n">eff_risks</span><span class="p">,</span> <span class="n">eff_returns</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>    <span class="n">max_ret_so_far</span> <span class="o">=</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>    <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="n">order</span><span class="p">:</span>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>        <span class="k">if</span> <span class="n">port_returns</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">max_ret_so_far</span><span class="p">:</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>            <span class="n">max_ret_so_far</span> <span class="o">=</span> <span class="n">port_returns</span><span class="p">[</span><span class="n">idx</span><span class="p">]</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>            <span class="n">eff_risks</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">port_risks</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>            <span class="n">eff_returns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">port_returns</span><span class="p">[</span><span class="n">idx</span><span class="p">])</span>
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>    <span class="n">eff_risks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">eff_risks</span><span class="p">)</span>
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>    <span class="n">eff_returns</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">eff_returns</span><span class="p">)</span>
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>    <span class="c1"># === Minimum-Variance Portfolio (MVP) ===</span>
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>    <span class="n">idx_mvp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">port_risks</span><span class="p">)</span>
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>    <span class="n">risk_mvp</span> <span class="o">=</span> <span class="n">port_risks</span><span class="p">[</span><span class="n">idx_mvp</span><span class="p">]</span>
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>    <span class="n">ret_mvp</span> <span class="o">=</span> <span class="n">port_returns</span><span class="p">[</span><span class="n">idx_mvp</span><span class="p">]</span>
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>    <span class="n">w_mvp</span> <span class="o">=</span> <span class="n">weights</span><span class="p">[</span><span class="n">idx_mvp</span><span class="p">]</span>
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>    <span class="c1"># === Tangency Portfolio (max Sharpe ratio vs. rf) ===</span>
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>    <span class="c1"># Avoid division by zero in Sharpe</span>
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>    <span class="n">eps</span> <span class="o">=</span> <span class="mf">1e-12</span>
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>    <span class="n">sharpes</span> <span class="o">=</span> <span class="p">(</span><span class="n">port_returns</span> <span class="o">-</span> <span class="n">rf</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">port_risks</span><span class="p">,</span> <span class="n">eps</span><span class="p">)</span>
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>    <span class="n">idx_tan</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">sharpes</span><span class="p">)</span>
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>    <span class="n">risk_tan</span> <span class="o">=</span> <span class="n">port_risks</span><span class="p">[</span><span class="n">idx_tan</span><span class="p">]</span>
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>    <span class="n">ret_tan</span> <span class="o">=</span> <span class="n">port_returns</span><span class="p">[</span><span class="n">idx_tan</span><span class="p">]</span>
+<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>    <span class="n">w_tan</span> <span class="o">=</span> <span class="n">weights</span><span class="p">[</span><span class="n">idx_tan</span><span class="p">]</span>
+<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>    <span class="c1"># === Capital Market Line (CML) ===</span>
+<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>    <span class="c1"># Line from (0, rf) to the tangency portfolio</span>
+<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>    <span class="n">slope</span> <span class="o">=</span> <span class="p">(</span><span class="n">ret_tan</span> <span class="o">-</span> <span class="n">rf</span><span class="p">)</span> <span class="o">/</span> <span class="n">risk_tan</span>
+<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>    <span class="n">risk_line</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">port_risks</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="mi">200</span><span class="p">)</span>
+<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>    <span class="n">ret_line</span> <span class="o">=</span> <span class="n">rf</span> <span class="o">+</span> <span class="n">slope</span> <span class="o">*</span> <span class="n">risk_line</span>
+<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>    <span class="c1"># === Plot ===</span>
+<a id="__codelineno-0-63" name="__codelineno-0-63" href="#__codelineno-0-63"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<a id="__codelineno-0-64" name="__codelineno-0-64" href="#__codelineno-0-64"></a>    <span class="c1"># All feasible portfolios</span>
+<a id="__codelineno-0-65" name="__codelineno-0-65" href="#__codelineno-0-65"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+<a id="__codelineno-0-66" name="__codelineno-0-66" href="#__codelineno-0-66"></a>        <span class="n">port_risks</span><span class="p">,</span> <span class="n">port_returns</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;lightgray&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;All feasible portfolios&quot;</span>
+<a id="__codelineno-0-67" name="__codelineno-0-67" href="#__codelineno-0-67"></a>    <span class="p">)</span>
+<a id="__codelineno-0-68" name="__codelineno-0-68" href="#__codelineno-0-68"></a>    <span class="c1"># Efficient frontier (risky assets only)</span>
+<a id="__codelineno-0-69" name="__codelineno-0-69" href="#__codelineno-0-69"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">eff_risks</span><span class="p">,</span> <span class="n">eff_returns</span><span class="p">,</span> <span class="s2">&quot;r-&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Efficient Frontier (risky)&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-70" name="__codelineno-0-70" href="#__codelineno-0-70"></a>    <span class="c1"># Capital Market Line</span>
+<a id="__codelineno-0-71" name="__codelineno-0-71" href="#__codelineno-0-71"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">risk_line</span><span class="p">,</span> <span class="n">ret_line</span><span class="p">,</span> <span class="s2">&quot;b--&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Capital Market Line (rf=2%)&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-72" name="__codelineno-0-72" href="#__codelineno-0-72"></a>    <span class="c1"># Mark MVP and Tangency points</span>
+<a id="__codelineno-0-73" name="__codelineno-0-73" href="#__codelineno-0-73"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">([</span><span class="n">risk_mvp</span><span class="p">],</span> <span class="p">[</span><span class="n">ret_mvp</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">80</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;MVP&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-74" name="__codelineno-0-74" href="#__codelineno-0-74"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+<a id="__codelineno-0-75" name="__codelineno-0-75" href="#__codelineno-0-75"></a>        <span class="p">[</span><span class="n">risk_tan</span><span class="p">],</span> <span class="p">[</span><span class="n">ret_tan</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">140</span><span class="p">,</span> <span class="n">edgecolors</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Tangency Portfolio&quot;</span>
+<a id="__codelineno-0-76" name="__codelineno-0-76" href="#__codelineno-0-76"></a>    <span class="p">)</span>
+<a id="__codelineno-0-77" name="__codelineno-0-77" href="#__codelineno-0-77"></a>    <span class="c1"># Labels and aesthetics</span>
+<a id="__codelineno-0-78" name="__codelineno-0-78" href="#__codelineno-0-78"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Risk (Portfolio Std Dev)&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-79" name="__codelineno-0-79" href="#__codelineno-0-79"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Expected Return&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-80" name="__codelineno-0-80" href="#__codelineno-0-80"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Efficient Frontier, CML, MVP &amp; Tangency Portfolio&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-81" name="__codelineno-0-81" href="#__codelineno-0-81"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<a id="__codelineno-0-82" name="__codelineno-0-82" href="#__codelineno-0-82"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-83" name="__codelineno-0-83" href="#__codelineno-0-83"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<a id="__codelineno-0-84" name="__codelineno-0-84" href="#__codelineno-0-84"></a>    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  חזרה למעלה
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="כותרת תחתונה" >
+        
+          
+          <a href="../intro/" class="md-footer__link md-footer__link--prev" aria-label="הקודם: ניהול תיקי השקעות">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                הקודם
+              </span>
+              <div class="md-ellipsis">
+                ניהול תיקי השקעות
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../capm/" class="md-footer__link md-footer__link--next" aria-label="הבא: CAPM">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                הבא
+              </span>
+              <div class="md-ellipsis">
+                CAPM
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Harel Karni
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["toc.follow", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.path", "navigation.tracking", "navigation.prune", "navigation.expand", "navigation.top", "navigation.footer", "content.tooltips", "header.autohide", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u05d4\u05d5\u05e2\u05ea\u05e7 \u05dc\u05dc\u05d5\u05d7", "clipboard.copy": "\u05d4\u05e2\u05ea\u05e7\u05d4 \u05dc\u05dc\u05d5\u05d7", "search.result.more.one": "\u05e2\u05d5\u05d3 \u05d0\u05d7\u05d3 \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.more.other": "\u05e2\u05d5\u05d3 # \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.none": "\u05d0\u05d9\u05df \u05de\u05e1\u05de\u05db\u05d9\u05dd \u05ea\u05d5\u05d0\u05de\u05d9\u05dd", "search.result.one": "\u05de\u05e1\u05de\u05da1 \u05ea\u05d5\u05d0\u05dd", "search.result.other": "# \u05de\u05e1\u05de\u05da \u05ea\u05d5\u05d0\u05dd", "search.result.placeholder": "\u05d9\u05e9 \u05dc\u05d4\u05e7\u05dc\u05d9\u05d3 \u05db\u05d3\u05d9 \u05dc\u05d4\u05ea\u05d7\u05d9\u05dc \u05dc\u05d7\u05e4\u05e9", "search.result.term.missing": "\u05d7\u05e1\u05e8", "select.version": "\u05d1\u05d7\u05d9\u05e8\u05ea \u05d2\u05e8\u05e1\u05d4"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="../../assets/javascripts/katex.min.js"></script>
+      
+        <script src="../../assets/javascripts/auto-render.min.js"></script>
+      
+        <script src="../../assets/javascripts/katex-init.js"></script>
+      
+        <script src="../../assets/javascripts/tablesort.min.js"></script>
+      
+        <script src="../../assets/javascripts/tablesort.js"></script>
+      
+    
+  </body>
+</html>

@@ -12,13 +12,13 @@
         <meta name="author" content="Harel Karni">
       
       
-        <link rel="canonical" href="https://harel.ai/Investment-risk/sensitivity-analysis/">
+        <link rel="canonical" href="https://harel.ai/Investment-portfolio-models/capm/">
       
       
-        <link rel="prev" href="../scenario-analysis/">
+        <link rel="prev" href="../mean_variance_optimization/">
       
       
-        <link rel="next" href="../risk-appetite/">
+        <link rel="next" href="../apt/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>ניתוח רגישויות - Harel.AI</title>
+        <title>CAPM - Harel.AI</title>
       
     
     
@@ -84,7 +84,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#capm" class="md-skip">
           לדלג לתוכן
         </a>
       
@@ -143,7 +143,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              ניתוח רגישויות
+              CAPM
             
           </span>
         </div>
@@ -253,13 +253,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../Investment-risk/" class="md-tabs__link">
           
   
   
@@ -277,11 +275,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../Investment-portfolio-models/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
   
@@ -382,8 +382,6 @@
       
   
   
-    
-  
   
   
     
@@ -399,6 +397,68 @@
       
         
       
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Investment-risk/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    הסיכון
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
         
       
         
@@ -425,7 +485,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <div class="md-nav__link md-nav__container">
@@ -434,7 +494,7 @@
   
   
   <span class="md-ellipsis">
-    הסיכון
+    מודלים לניהול תיקי השקעות
     
   </span>
   
@@ -442,16 +502,16 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            הסיכון
+            מודלים לניהול תיקי השקעות
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -469,7 +529,7 @@
   
   
   <span class="md-ellipsis">
-    הבנת המונח סיכון בהשקעות
+    ניהול תיקי השקעות
     
   </span>
   
@@ -487,58 +547,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../absolute-and-relative-investment-risk/" class="md-nav__link">
+      <a href="../mean_variance_optimization/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    סיכון מוחלט וסיכון יחסי
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../measures/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    מדדים להערכת סיכון
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../scenario-analysis/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    ניתוח תרחישים
+    מודל מרקוביץ
     
   </span>
   
@@ -570,7 +584,7 @@
   
   
   <span class="md-ellipsis">
-    ניתוח רגישויות
+    CAPM
     
   </span>
   
@@ -583,7 +597,7 @@
   
   
   <span class="md-ellipsis">
-    ניתוח רגישויות
+    CAPM
     
   </span>
   
@@ -606,9 +620,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      עקרונות מרכזיים ומודל תיאורטי
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      מהו ניתוח רגישות ?
+      מקדם בטא (β)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capm_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      שימושים במודל CAPM
     </span>
   </a>
   
@@ -617,7 +649,7 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      ניתוח רגישות והערכת סיכונים
+      יתרונות
     </span>
   </a>
   
@@ -626,60 +658,54 @@
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      שימוש בניתוח רגישות בהערכת סיכונים
+      חסרונות וביקורת
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="שימוש בניתוח רגישות בהערכת סיכונים">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      זיהוי גורמי סיכון מרכזיים
+      גורמים המשפיעים על המודל
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#regulation" class="md-nav__link">
     <span class="md-ellipsis">
-      הבנת טווח התוצאות האפשריות
+      היבטים רגולטוריים בישראל
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#risks" class="md-nav__link">
     <span class="md-ellipsis">
-      היערכות וניהול סיכונים פרואקטיבי
+      סיכונים
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
-      השוואת פרויקטים/השקעות
+      דוגמה
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
-      יישומים עיקריים בהשקעות
+      מונחים קשורים
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -699,58 +725,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../risk-appetite/" class="md-nav__link">
+      <a href="../apt/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    תיאבון וסבילות לסיכון
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../risk-reward/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    היחס בין סיכון לסיכוי
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../risk-reduction/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    הפתחחת סיכונים
+    APT
     
   </span>
   
@@ -763,66 +743,6 @@
             
           </ul>
         </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-      
-        
-        
-      
-    
-    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
-      
-        
-  
-  
-  
-    <a href="../../Investment-portfolio-models/" class="md-nav__link">
-      
-  
-  
-  <span class="md-ellipsis">
-    מודלים לניהול תיקי השקעות
-    
-  </span>
-  
-
-      
-        <span class="md-nav__icon md-icon"></span>
-      
-    </a>
-  
-
       
     </li>
   
@@ -909,9 +829,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      עקרונות מרכזיים ומודל תיאורטי
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      מהו ניתוח רגישות ?
+      מקדם בטא (β)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capm_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      שימושים במודל CAPM
     </span>
   </a>
   
@@ -920,7 +858,7 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      ניתוח רגישות והערכת סיכונים
+      יתרונות
     </span>
   </a>
   
@@ -929,60 +867,54 @@
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      שימוש בניתוח רגישות בהערכת סיכונים
+      חסרונות וביקורת
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="שימוש בניתוח רגישות בהערכת סיכונים">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      זיהוי גורמי סיכון מרכזיים
+      גורמים המשפיעים על המודל
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#regulation" class="md-nav__link">
     <span class="md-ellipsis">
-      הבנת טווח התוצאות האפשריות
+      היבטים רגולטוריים בישראל
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#risks" class="md-nav__link">
     <span class="md-ellipsis">
-      היערכות וניהול סיכונים פרואקטיבי
+      סיכונים
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
     <span class="md-ellipsis">
-      השוואת פרויקטים/השקעות
+      דוגמה
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
-      יישומים עיקריים בהשקעות
+      מונחים קשורים
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1002,46 +934,156 @@
 
 
 
-<h1 id="_1">ניתוח רגישות</h1>
-<hr />
-<p>לאחר שסקרנו את מדדי הסיכון המרכזיים המאפשרים לנו לכמת את התנודתיות והחשיפה של השקעה, פרק זה יתמקד בגישות מתקדמות יותר להערכת סיכונים: <strong>ניתוח רגישות</strong> ו<strong>תרחישים</strong>. כלים אלו אינם מודדים סיכון היסטורי בלבד, אלא מאפשרים למשקיעים לבחון כיצד השקעה עלולה להגיב לשינויים עתידיים בגורמי מפתח, ומספקים תובנות מעמיקות יותר לגבי פוטנציאל ההפסד בתנאים שונים.</p>
-<h2 id="_2">מהו ניתוח רגישות ?</h2>
-<p><strong>ניתוח רגישות (Sensitivity Analysis)</strong> הוא כלי אנליטי המשמש להערכת האופן שבו התוצאה של מודל או השקעה מסוימת תשתנה כתוצאה משינוי בודד באחד ממשתני הקלט (Inputs), כאשר כל שאר המשתנים נשארים קבועים. מטרתו העיקרית היא לזהות אילו משתנים משפיעים באופן המשמעותי ביותר על התוצאה הסופית, ובכך להבין את נקודות התורפה והחשיפה העיקריות של ההשקעה.</p>
-<p>במילים פשוטות, ניתוח רגישות עונה על השאלה: "בכמה תשתנה תשואת התיק או שווי ההשקעה אם משתנה מסוים (לדוגמה, הריבית, האינפלציה, או מחיר חומר גלם) ישתנה באחוז מסוים?"</p>
-<h2 id="_3">ניתוח רגישות והערכת סיכונים</h2>
-<p><strong>ניתוח רגישות</strong> הוא כלי בניהול פיננסי המשמש להערכת <strong>השפעת השינויים במשתני מפתח</strong> על תוצאות ההשקעה או הפרויקט. מטרתו לענות על השאלה "מה קורה לתוצאה (שווי נכס, תשואה, רווח) אם גורם מסוים משתנה?", בהנחה שכל שאר הגורמים קבועים. בניתוח רגישות בודקים מגוון ערכים אפשריים של משתנה עצמאי (כגון שיעור ריבית, שיעור אינפלציה, שער חליפין, שיעור צמיחה ברווחים), ובוחנים כיצד הם משפיעים על משתנה תלוי (כגון שווי נכס, רווח נקי, או מחיר מניה) תחת סט הנחות נתון</p>
-<p>במסגרת ההשקעות, ניתוח רגישות מסייע בהבנת הסיכונים על ידי כימות ההשפעה של תרחישים שונים. דוגמה קלאסית היא <strong>השפעת שינויים בריבית על מחיר אג"ח</strong>: ידוע שאג"ח בעלת מח"מ מסוים רגישה לשינויים בריבית. אם נניח שאג"ח מסוימת בעלת משך 4 שנים, העלאה של 1% בריבית צפויה (בקירוב) להפחית את מחיר האג"ח בכ-4%. באמצעות ניתוח רגישות, אפשר למפות כיצד שינוי של +0.5%, +1%, +2% בריבית ישפיע על מחיר אותה אג"ח, וכך להעריך את <em>סיכון הריבית</em> הגלום בה. תוצאה אפשרית: עלייה של 2% בריבית תגרום כ-8% ירידה במחיר - נתון שמסייע למשקיע להבין את פוטנציאל ההפסד מתרחיש כזה.</p>
-<p>באופן דומה, ניתן לבצע ניתוח רגישות עבור <em>מניות</em> ביחס לשינויים בפרמטרים כמו שיעור הצמיחה ברווחי החברה, מרווח הרווח הגולמי או היוון תזרימי המזומנים. למשל, משקיע עשוי לבחון: "מה יהיה שווי המניה אם שיעור הצמיחה ב-5 השנים הבאות יהיה 8% במקום 10% שהונח?" או "מה יקרה לרווח החברה אם מחירי חומרי הגלם יעלו ב-15%?". על ידי שינוי פרמטר בודד ובחינת התוצאה, מבודדים את השפעת אותו גורם על ההשקעה.</p>
-<h2 id="_4">שימוש בניתוח רגישות בהערכת סיכונים</h2>
-<h3 id="_5">זיהוי גורמי סיכון מרכזיים</h3>
-<p>הניתוח מגלה אילו משתנים הם המשמעותיים ביותר להשקעה. אם למשל שווי פרויקט תלוי מאוד במחיר נפט, נראה שבתסריטים בהם מחיר הנפט משתנה במעט - השווי משתנה באופן דרמטי. הדבר מאותת שזהו גורם סיכון קריטי שיש להתמקד בו (למש - לגדר או לנטר בקפידה).</p>
-<h3 id="_6">הבנת טווח התוצאות האפשריות</h3>
-<p>ניתוח רגישות מציג למשקיע את "מרחב האפשרויות" - למשל, בתרחיש אופטימי (מחירי סחורות יורדים, מכירות עולות) הרווח גבוה, אך בתרחיש פסימי (מחירי תשומה עולים, ביקוש יורד) הפרויקט אולי אף מפסיד. הפער בין התרחישים מסמן את רמת הסיכון.</p>
-<h3 id="_7">היערכות וניהול סיכונים פרואקטיבי</h3>
-<p>אם מזוהה שגורם מסוים (כגון ריבית) עלול לפגוע קשות בהשקעה, המשקיע יכול להיערך: למשל להקטין חשיפה לאג"ח ארוכות טווח אם ניתוח הרגישות מראה שהן רגישות מאוד לעליית ריבית. בדומה, חברה יכולה לגדר מטבע אם רווחיה רגישים מאוד לשער חליפין.</p>
-<h3 id="_8">השוואת פרויקטים/השקעות</h3>
-<p>שני פרויקטים עשויים להיות בעלי ערך נוכחי נקי חיובי בהנחת הבסיס, אך ניתוח רגישות עשוי להראות שאחד מהם יציב יחסית לשינויים (נחשב "בטוח" יותר) בעוד השני מתפרק בתרחיש פסימי קל. מידע זה יסייע בבחירה בין האלטרנטיבות.</p>
-<p>ניתוח רגישות מקובל ככלי משלים ל<strong>ניתוח תרחישים</strong>: בניתוח רגישות משנים <strong>משתנה יחיד</strong> בכל פעם, בעוד בניתוח תרחישים משנים כמה משתנים יחד לתרחיש כולל (למשל "מיתון עמוק": ירידה בביקוש, עלייה בריבית, אינפלציה גבוהה). שני הכלים יחד מאפשרים הבנה רחבה של סיכון: הראשון מבודד השפעות, והשני מדמה מצבי עולם. דוגמה לשימוש מוסדי: מוסדות פיננסיים מחויבים לעיתים לבצע ניתוח רגישות לתיק הנכסים שלהם ולפרסם, למשל, <em>מה תהיה ההשפעה על ההכנסות והרווח במקרה של שינוי של ±1% בריבית</em> (זוהי דרישה רגולטורית עבור בנקים, המדווחים על "פער ריביות" ורגישות ההכנסות משינוי ריבית).</p>
-<p>בסיכומו של דבר, ניתוח רגישות הוא חלק אינטגרלי ממערך ניהול הסיכונים. הוא מאפשר "לחוש את ההשקעה" תחת תנאים שונים, להבין <strong>איפה נקודות התורפה</strong> (לאיזה גורם התוצאה רגישה במיוחד) ולקבל החלטות מדיניות מתאימות - בין אם זה גידור סיכונים, דרישת תשואה גבוהה יותר כתמורה, או אף ויתור על ההשקעה אם הרגישות גדולה מדי.</p>
-<h3 id="_9">יישומים עיקריים בהשקעות</h3>
+<h1 id="capm">מודל CAPM – מודל לתמחור נכסי הון</h1>
+<p>מודל <strong>CAPM (Capital Asset Pricing Model)</strong> הוא מודל פיננסי מתמטי לתמחור נכסי הון, המשמש להערכת התשואה הצפויה של נכס (כגון מניה) בהתאם לרמת הסיכון השיטתי שלו ביחס לשוק כולו. המודל פותח בשנות ה-60 כהרחבה של מודל <strong>קו החזית היעילה</strong> של הארי מרקוביץ' (Harry Markowitz) ומהווה בסיס מרכזי בתיאוריית תיקי ההשקעות ובתחום המימון המודרני. המודל מבוסס על ההנחה שהמשקיעים דורשים פיצוי בשני מרכיבים: (1) תשואה חסרת סיכון (2) פיצוי על סיכון שיטתי (Systematic Risk) הנמדד באמצעות מקדם β (בטא).</p>
+<p>המודל פותח על ידי הכלכלנים <strong>ג'ק טריינור (Jack Treynor)</strong>, <strong>ויליאם שארפ (William Sharpe)</strong>, <strong>ג'ון לינטנר (John Lintner)</strong> ו<strong>יאן מוסין (Jan Mossin)</strong> בשנות ה- 60. פיתוחו נשען על עבודתו של <strong>הארי מרקוביץ (Harry Markowitz)</strong> ותיאוריית תיקי ההשקעות המודרנית (Modern Portfolio Theory). שארפ קיבל פרס נובל לכלכלה בשנת 1990 על תרומתו לפיתוח CAPM.</p>
+<h2 id="_1">עקרונות מרכזיים ומודל תיאורטי</h2>
+<p>מודל CAPM קובע שהתשואה הצפויה של נכס תחושב לפי הנוסחה:</p>
+<div class="arithmatex">\[
+E(R_i) = R_f + \beta_i \cdot (E(R_m) - R_f)
+\]</div>
+<p>כאשר:</p>
 <ul>
 <li>
-<p><strong>בחינת רגישות מחיר אגרת חוב לשינויי ריבית:</strong> שינוי של 1% בריבית יכול להשפיע באופן דרמטי על מחיר אגרת חוב ארוכת טווח. ניתוח רגישות יכול להמחיש זאת.</p>
+<p><span class="arithmatex">\(E(R_i)\)</span> – התשואה הצפויה על הנכס <span class="arithmatex">\(i\)</span>.</p>
 </li>
 <li>
-<p><strong>הערכת שווי חברה:</strong> כיצד שינוי בשיעור הצמיחה הצפוי, שולי הרווח, או עלות ההון ישפיעו על הערכת השווי של חברה בשיטת תזרים מזומנים מהוון (DCF).</p>
+<p><span class="arithmatex">\(R_f\)</span>  – שיעור התשואה חסרת הסיכון (Risk-Free Rate), לרוב אג"ח ממשלתיות.</p>
 </li>
 <li>
-<p><strong>השפעת תנודות במטבעות על חברות יצואניות/יבואניות:</strong> כיצד שינויים בשער החליפין ישפיעו על רווחיות חברה בעלת פעילות בינלאומית.</p>
+<p><span class="arithmatex">\(\beta_i\)</span> – מדד בטא של הנכס, המודד את רגישות הנכס לתנועות השוק.</p>
 </li>
 <li>
-<p><strong>רגישות תיק השקעות למחירי סחורות:</strong> כיצד תיק המושקע בחברות אנרגיה יושפע מירידה במחיר הנפט.</p>
+<p><span class="arithmatex">\(E(R_m)\)</span> – התשואה הצפויה של השוק.</p>
+</li>
+<li>
+<p><span class="arithmatex">\((E(R_m) - R_f)\)</span> – פרמיית סיכון השוק (Market Risk Premium).</p>
 </li>
 </ul>
-<h4 id="_10">כיצד זה מתבצע?</h4>
-<p>התהליך כולל זיהוי משתני מפתח משפיעים, קביעת טווח שינוי לכל משתנה (לדוגמה, ±5% או ±10%), ולאחר מכן חישוב מחדש של תוצאת המודל או ההשקעה עבור כל שינוי כזה. התוצאות מוצגות לרוב בטבלה, גרף או "תרשים טורנדו" (Tornado Chart) שמציג באופן ויזואלי את המשתנים המשפיעים ביותר.</p>
-<p><strong>יתרונות:</strong> ניתוח רגישות מאפשר למשקיעים לזהות את "הנהגים" העיקריים של סיכון ותשואה, ולהבין היכן כדאי לרכז את מאמצי ניהול הסיכונים או מחקר נוסף. הוא מסייע להבין את נקודות התורפה של ההשקעה.</p>
-<p><strong>מגבלות:</strong> ניתוח רגישות בוחן כל משתנה בנפרד (כל היתר קבועים), בעוד שבמציאות, משתנים רבים נוטים לנוע יחד (יש ביניהם מתאם). זה מוביל אותנו לצורך בכלים מורכבים יותר כמו ניתוח תרחישים.</p>
+<p>המשמעות: ככל שהנכס נושא סיכון שיטתי גבוה יותר (בטא גבוהה), המשקיעים ידרשו תשואה צפויה גבוהה יותר כפיצוי.</p>
+<h2 id="_2">מקדם בטא (β)</h2>
+<p>בטא מייצגת את רגישות הנכס לתנודות השוק:</p>
+<ul>
+<li>
+<p><strong><span class="arithmatex">\(β = 1\)</span></strong> – הנכס נע בקצב דומה לשוק.</p>
+</li>
+<li>
+<p><strong><span class="arithmatex">\(β &gt; 1\)</span></strong> – הנכס תנודתי יותר מהשוק (סיכון גבוה יותר).</p>
+</li>
+<li>
+<p><strong><span class="arithmatex">\(β &lt; 1\)</span></strong> – הנכס תנודתי פחות מהשוק (סיכון נמוך יותר).</p>
+</li>
+<li>
+<p><strong><span class="arithmatex">\(β &lt; 0\)</span></strong> – הנכס נע הפוך לשוק (לדוגמה, נכסי גידור).</p>
+</li>
+</ul>
+<p><a href="\Investment-risk\measures#_2">הרחבה בנושא מקדם בטא (β)</a></p>
+<h2 id="capm_1">שימושים במודל CAPM</h2>
+<ul>
+<li>
+<p><strong>הערכת תשואה צפויה של מניות</strong> – משמשת בקביעת עלות ההון העצמי (Cost of Equity) בחברות.</p>
+</li>
+<li>
+<p><strong>תמחור נכסי השקעה</strong> – השוואת תשואה נדרשת מול תשואה צפויה.</p>
+</li>
+<li>
+<p><strong>מדידה והערכת ביצועים</strong> – השוואת ביצועי קרנות השקעה ביחס לרמת הסיכון השיטתי שלהן.</p>
+</li>
+<li>
+<p><strong>מודל בסיס לניתוחי DCF</strong> (Discounted Cash Flow) להערכת שווי חברות.</p>
+</li>
+</ul>
+<h2 id="_3">יתרונות</h2>
+<ul>
+<li>
+<p><strong>פשטות</strong> – נוסחה ברורה וקלות שימוש.</p>
+</li>
+<li>
+<p><strong>קישור ישיר בין סיכון לתשואה</strong> – מאפשר הערכת פיצוי סיכון מדויק יחסית.</p>
+</li>
+<li>
+<p><strong>שימוש רחב במוסדות פיננסיים</strong> – כלי מקובל להערכת עלות הון.</p>
+</li>
+</ul>
+<h2 id="_4">חסרונות וביקורת</h2>
+<ul>
+<li>
+<p><strong>הנחות לא מציאותיות</strong> – הנחה על שוק יעיל, משקיעים רציונליים, ומידע מלא.</p>
+</li>
+<li>
+<p><strong>התבססות על מדד יחיד (β)</strong> – אינו לוקח בחשבון סיכונים ספציפיים או פקטורים נוספים.</p>
+</li>
+<li>
+<p><strong>קושי בקביעת תשואה צפויה של השוק</strong> – תלוי בנתונים היסטוריים שאינם תמיד משקפים את העתיד.</p>
+</li>
+<li>
+<p><strong>תוצאות רגישות לקביעת β</strong> – חישוב שגוי של בטא מוביל להערכת תשואה שגויה.</p>
+</li>
+</ul>
+<p>בשל מגבלות אלו, פותחו מודלים מתקדמים יותר כגון <strong>מודל פמה-פרנץ' (Fama-French)</strong> הכולל פקטורים נוספים.</p>
+<h2 id="_5">גורמים המשפיעים על המודל</h2>
+<ul>
+<li>
+<p><strong>בחירת תקופת המדידה</strong> של תשואות שוק ובטא.</p>
+</li>
+<li>
+<p><strong>סוג השוק</strong> – מדד השוק הנבחר (למשל, S&amp;P 500 לעומת תל אביב 125).</p>
+</li>
+<li>
+<p><strong>שער ריבית חסרת סיכון</strong> – בישראל מקובל להשתמש בתשואות אג"ח ממשלתיות.</p>
+</li>
+<li>
+<p><strong>תנאי שוק מקומיים</strong> – משברים פיננסיים, ריבית בנק ישראל, אינפלציה.</p>
+</li>
+</ul>
+<h2 id="regulation">היבטים רגולטוריים בישראל</h2>
+<p>בישראל, CAPM משמש בעיקר בהערכות שווי במסגרת דוחות כספיים לפי תקני IFRS, ובייחוד בתחשיבי <strong>עלות ההון העצמי (Cost of Equity)</strong> עבור חברות ציבוריות הנסחרות בבורסה לניירות ערך בתל אביב (TASE).</p>
+<ul>
+<li>
+<p><strong>ריבית חסרת סיכון</strong> בישראל נגזרת לרוב מאג"ח ממשלת ישראל.</p>
+</li>
+<li>
+<p><strong>פרמיית סיכון שוק</strong> בישראל מחושבת לעיתים באמצעות שילוב של נתוני תשואות גלובליים (למשל S&amp;P 500) עם פרמיית סיכון מקומית (Country Risk Premium).</p>
+</li>
+</ul>
+<h2 id="risks">סיכונים</h2>
+<ul>
+<li>
+<p>שימוש לא מדויק במודל עלול להוביל להערכת שווי שגויה.</p>
+</li>
+<li>
+<p>שווקים מתפתחים (כמו ישראל) מציגים לעיתים סטיות מהנחות המודל.</p>
+</li>
+<li>
+<p>אי יציבות בפרמיית סיכון השוק בתקופות של משבר פיננסי.</p>
+</li>
+</ul>
+<h2 id="example">דוגמה</h2>
+<ul>
+<li><strong>חישוב תשואה צפויה למניה</strong>:  </li>
+</ul>
+<p>אם <span class="arithmatex">\(\beta = 1.2 \)</span>, <span class="arithmatex">\(R_f = 3\% \)</span>, ופרמיית סיכון שוק היא <span class="arithmatex">\(5\% \)</span>, אז:  </p>
+<div class="arithmatex">\[
+  E(R_i) = R_f + \beta \cdot (R_m - R_f) = 3\% + 1.2 \times 5\% = 9\%
+\]</div>
+<h2 id="references">מונחים קשורים</h2>
+<ul>
+<li>
+<p><strong><a href="https://he.wikipedia.org/wiki/%D7%91%D7%98%D7%90">בטא (β)</a></strong></p>
+</li>
+<li>
+<p><strong><a href="https://he.wikipedia.org/wiki/%D7%AA%D7%99%D7%90%D7%95%D7%A8%D7%99%D7%99%D7%AA_%D7%AA%D7%99%D7%A7%D7%99_%D7%94%D7%A9%D7%A7%D7%A2%D7%95%D7%AA">תיאוריית תיקי השקעות מודרנית (MPT)</a></strong></p>
+</li>
+<li>
+<p><strong>פרמיית סיכון שוק</strong></p>
+</li>
+<li>
+<p><strong>עלות הון עצמי (Cost of Equity)</strong></p>
+</li>
+<li>
+<p><strong>מודל פמה-פרנץ'</strong></p>
+</li>
+</ul>
 
 
 
@@ -1077,7 +1119,7 @@
       <nav class="md-footer__inner md-grid" aria-label="כותרת תחתונה" >
         
           
-          <a href="../scenario-analysis/" class="md-footer__link md-footer__link--prev" aria-label="הקודם: ניתוח תרחישים">
+          <a href="../mean_variance_optimization/" class="md-footer__link md-footer__link--prev" aria-label="הקודם: מודל מרקוביץ">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1087,20 +1129,20 @@
                 הקודם
               </span>
               <div class="md-ellipsis">
-                ניתוח תרחישים
+                מודל מרקוביץ
               </div>
             </div>
           </a>
         
         
           
-          <a href="../risk-appetite/" class="md-footer__link md-footer__link--next" aria-label="הבא: תיאבון וסבילות לסיכון">
+          <a href="../apt/" class="md-footer__link md-footer__link--next" aria-label="הבא: APT">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 הבא
               </span>
               <div class="md-ellipsis">
-                תיאבון וסבילות לסיכון
+                APT
               </div>
             </div>
             <div class="md-footer__button md-icon">

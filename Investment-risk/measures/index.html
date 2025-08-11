@@ -47,8 +47,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=system-ui,+'Segoe+UI',+Roboto,+'Helvetica+Neue',+Arial,+sans-serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
@@ -70,6 +70,8 @@
   
     
     
+      
+    
     
     
     
@@ -82,12 +84,35 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#risk-measures" class="md-skip">
           לדלג לתוכן
         </a>
       
     </div>
     <div data-md-component="announce">
+      
+        <aside class="md-banner">
+          <div class="md-banner__inner md-grid md-typeset">
+            
+              <button class="md-banner__button md-icon" aria-label="לא להציג את זה שוב">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+              </button>
+            
+            
+<div class="banner__text">
+    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF">
+        <path
+            d="M756-120 537-339l84-84 219 219-84 84Zm-552 0-84-84 276-276-68-68-28 28-51-51v82l-28 28-121-121 28-28h82l-50-50 142-142q20-20 43-29t47-9q24 0 47 9t43 29l-92 92 50 50-28 28 68 68 90-90q-4-11-6.5-23t-2.5-24q0-59 40.5-99.5T701-841q15 0 28.5 3t27.5 9l-99 99 72 72 99-99q7 14 9.5 27.5T841-701q0 59-40.5 99.5T701-561q-12 0-24-2t-23-7L204-120Z" />
+    </svg>
+    <span>הסבלנות משתלמת... האתר בבניה בימים אלה :)</span>
+</div>
+
+          </div>
+          
+            <script>var el=document.querySelector("[data-md-component=announce]");if(el){var content=el.querySelector(".md-typeset");__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0)}</script>
+          
+        </aside>
       
     </div>
     
@@ -96,7 +121,7 @@
 
   
 
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="כותרת עליונה">
     <a href="../.." title="Harel.AI" class="md-header__button md-logo" aria-label="Harel.AI" data-md-component="logo">
       
@@ -126,7 +151,33 @@
     </div>
     
       
+        <form class="md-header__option" data-md-component="palette">
+  
     
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="green"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="green"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
     
@@ -173,13 +224,109 @@
     
   </nav>
   
+    
+      
+<nav class="md-tabs" aria-label="לשוניות" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  ברוכים הבאים
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  הסיכון
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Investment-portfolio-models/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  מודלים לניהול תיקי השקעות
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../About/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  אודות
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -193,8 +340,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="ניווט" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ניווט" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Harel.AI" class="md-nav__button md-logo" aria-label="Harel.AI" data-md-component="logo">
       
@@ -263,10 +412,16 @@
     
     
     
+      
+        
+        
+      
+      
+    
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
@@ -287,7 +442,7 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
@@ -405,43 +560,58 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      מדדי ביצועים לסיכון מוחלט
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="מדדי ביצועים לסיכון מוחלט">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#std" class="md-nav__link">
     <span class="md-ellipsis">
       סטיית תקן ותנודתיות
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#-" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#beta" class="md-nav__link">
     <span class="md-ellipsis">
       בטא- מדידת הסיכון היחסי לשוק
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#mdd" class="md-nav__link">
     <span class="md-ellipsis">
       ירידה מקסימלית
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#var" class="md-nav__link">
     <span class="md-ellipsis">
       ערך הנתון בסיכון
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#-_1" class="md-nav__link">
+  <a href="#-" class="md-nav__link">
     <span class="md-ellipsis">
       מדדי ביצועים מתוקנני-סיכון
     </span>
@@ -451,7 +621,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#sharpe-ratio" class="md-nav__link">
     <span class="md-ellipsis">
       מדד שארפ
     </span>
@@ -460,7 +630,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#treynor-ratio" class="md-nav__link">
     <span class="md-ellipsis">
       מדד טריינור
     </span>
@@ -471,7 +641,7 @@
           <li class="md-nav__item">
   <a href="#calmar-ratio" class="md-nav__link">
     <span class="md-ellipsis">
-      מדד קלמר (Calmar Ratio)
+      מדד קלמר
     </span>
   </a>
   
@@ -480,33 +650,9 @@
           <li class="md-nav__item">
   <a href="#sortino-ratio" class="md-nav__link">
     <span class="md-ellipsis">
-      מדד סורטינו (Sortino Ratio)
+      מדד סורטינו
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="מדד סורטינו (Sortino Ratio)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#-downside-deviation" class="md-nav__link">
-    <span class="md-ellipsis">
-      למה הכוונה ב-Downside Deviation?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#downside-deviation" class="md-nav__link">
-    <span class="md-ellipsis">
-      כיצד מחושבת Downside Deviation?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -652,9 +798,95 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../About/" class="md-nav__link">
+    
+    
+      
         
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../Investment-portfolio-models/" class="md-nav__link">
+      
+  
+  
+  <span class="md-ellipsis">
+    מודלים לניהול תיקי השקעות
+    
+  </span>
+  
+
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+      
+        
+        
+      
+    
+    <li class="md-nav__item md-nav__item--pruned md-nav__item--nested">
+      
+        
+  
+  
+  
+    <a href="../../About/" class="md-nav__link">
+      
   
   
   <span class="md-ellipsis">
@@ -663,7 +895,13 @@
   </span>
   
 
-      </a>
+      
+        <span class="md-nav__icon md-icon"></span>
+      
+    </a>
+  
+
+      
     </li>
   
 
@@ -695,43 +933,58 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      מדדי ביצועים לסיכון מוחלט
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="מדדי ביצועים לסיכון מוחלט">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#std" class="md-nav__link">
     <span class="md-ellipsis">
       סטיית תקן ותנודתיות
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#-" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#beta" class="md-nav__link">
     <span class="md-ellipsis">
       בטא- מדידת הסיכון היחסי לשוק
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#mdd" class="md-nav__link">
     <span class="md-ellipsis">
       ירידה מקסימלית
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#var" class="md-nav__link">
     <span class="md-ellipsis">
       ערך הנתון בסיכון
     </span>
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#-_1" class="md-nav__link">
+  <a href="#-" class="md-nav__link">
     <span class="md-ellipsis">
       מדדי ביצועים מתוקנני-סיכון
     </span>
@@ -741,7 +994,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#sharpe-ratio" class="md-nav__link">
     <span class="md-ellipsis">
       מדד שארפ
     </span>
@@ -750,7 +1003,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#treynor-ratio" class="md-nav__link">
     <span class="md-ellipsis">
       מדד טריינור
     </span>
@@ -761,7 +1014,7 @@
           <li class="md-nav__item">
   <a href="#calmar-ratio" class="md-nav__link">
     <span class="md-ellipsis">
-      מדד קלמר (Calmar Ratio)
+      מדד קלמר
     </span>
   </a>
   
@@ -770,33 +1023,9 @@
           <li class="md-nav__item">
   <a href="#sortino-ratio" class="md-nav__link">
     <span class="md-ellipsis">
-      מדד סורטינו (Sortino Ratio)
+      מדד סורטינו
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="מדד סורטינו (Sortino Ratio)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#-downside-deviation" class="md-nav__link">
-    <span class="md-ellipsis">
-      למה הכוונה ב-Downside Deviation?
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#downside-deviation" class="md-nav__link">
-    <span class="md-ellipsis">
-      כיצד מחושבת Downside Deviation?
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -821,13 +1050,16 @@
 
 
 
-<h1 id="_1">מדדים להערכת סיכון</h1>
+<h1 id="risk-measures">מדדים להערכת סיכון</h1>
 <hr />
 <p>לאחר שהבנו את מהותו של הסיכון בהשקעות ואת סוגיו השונים, פרק זה יתמקד <strong>בכלים כמותיים המשמשים למדידת והערכת סיכון.</strong> כלים אלו מספקים למשקיעים שפה משותפת ונתונים אובייקטיביים לכימות תנודתיות, חשיפה לשוק וביצועים מתוקני-סיכון, ומאפשרים קבלת החלטות מושכלת יותר. נסקור מדדים מרכזיים, החל ממדדי תנודתיות בסיסיים ועד למדדי ביצועים מורכבים יותר המשלבים סיכון ותשואה.</p>
-<h2 id="_2">סטיית תקן ותנודתיות</h2>
-<p><strong>סטיית תקן</strong> (Standard Deviation) היא המדד הנפוץ והבסיסי ביותר לכימות <strong>תנודתיות</strong> (Volatility) בהשקעות, והיא מהווה מדד מרכזי ל<strong>סיכון מוחלט</strong>. סטיית תקן מודדת את מידת הפיזור של סדרת נתונים (במקרה שלנו, תשואות השקעה) סביב הממוצע שלה. ככל שסטיית התקן גבוהה יותר, כך התשואות ההיסטוריות היו מפוזרות יותר סביב הממוצע, מה שמעיד על תנודתיות גבוהה יותר של הנכס, ובהתאמה – על סיכון גבוה יותר.</p>
+<h2 id="_1">מדדי ביצועים לסיכון מוחלט</h2>
+<p>מדדים אלו מאפשרים למשקיעים להעריך את מידת הסיכון בהשקעה ללא קשר לתשואה שהתקבלה.
+מדדים אלה עונים על השאלה - מהי מידת הסיכון שנטלתי על עצמי?"</p>
+<h3 id="std">סטיית תקן ותנודתיות</h3>
+<p><strong>סטיית תקן</strong> (Standard Deviation) היא המדד הנפוץ והבסיסי ביותר לכימות <strong>תנודתיות</strong> (Volatility) בהשקעות, והיא מהווה מדד מרכזי ל<strong>סיכון מוחלט</strong>. סטיית תקן מודדת את מידת הפיזור של סדרת נתונים (במקרה שלנו, תשואות השקעה) סביב הממוצע שלה. ככל שסטיית התקן גבוהה יותר, כך התשואות ההיסטוריות היו מפוזרות יותר סביב הממוצע, מה שמעיד על תנודתיות גבוהה יותר של הנכס, ובהתאמה - על סיכון גבוה יותר.</p>
 <p><strong>חישוב ופרשנות</strong> </p>
-<p>סטיית התקן מחושבת על ידי שורש ריבועי של השונות, המהווה ממוצע ריבועי הסטיות מהממוצע. במילים פשוטות, היא מייצגת את הסטייה הממוצעת של כל נקודת נתון מהממוצע של קבוצת הנתונים. אם תשואת מניה מסוימת הייתה בממוצע 10% לשנה עם סטיית תקן של 20%, המשמעות היא שמרבית התשואות השנתיות שלה (כ-68% בהתפלגות נורמלית) נפלו בטווח שבין -10% ל-30% (10% ± 20%). סטיית תקן גבוהה מצביעה על טווח רחב יותר של תוצאות אפשריות, ומכאן – על אי-ודאות גדולה יותר לגבי התשואה העתידית של ההשקעה.</p>
+<p>סטיית התקן מחושבת על ידי שורש ריבועי של השונות, המהווה ממוצע ריבועי הסטיות מהממוצע. במילים פשוטות, היא מייצגת את הסטייה הממוצעת של כל נקודת נתון מהממוצע של קבוצת הנתונים. אם תשואת מניה מסוימת הייתה בממוצע 10% לשנה עם סטיית תקן של 20%, המשמעות היא שמרבית התשואות השנתיות שלה (כ-68% בהתפלגות נורמלית) נפלו בטווח שבין -10% ל-30% (10% ± 20%). סטיית תקן גבוהה מצביעה על טווח רחב יותר של תוצאות אפשריות, ומכאן - על אי-ודאות גדולה יותר לגבי התשואה העתידית של ההשקעה.</p>
 <p>הנוסחה לחישוב סטיית תקן של סדרת נתונים <span class="arithmatex">\( X_1,X_2,...,X_n \)</span>​ היא:</p>
 <div class="arithmatex">\[
 \sigma = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (X_i - \mu)^2}
@@ -847,7 +1079,7 @@
 <p>כאשר נדון בבניית המודל נעסוק גם באופן החישוב הנכון עבורנו. </p>
 <p><strong>יתרונות:</strong> סטיית תקן קלה לחישוב ולהבנה, ומספקת אינדיקציה ברורה למידת התנודתיות של נכס או תיק. היא מאפשרת השוואה ישירה בין רמות הסיכון המוחלט של השקעות שונות.</p>
 <p><strong>מגבלות:</strong> סטיית תקן מתייחסת לעליות וירידות כאחד כתנודתיות, ואינה מבחינה בין "תנודתיות חיובית" (עליות) ל"תנודתיות שלילית" (ירידות). בנוסף, היא מבוססת על נתונים היסטוריים, ואינה ערובה לביצועים עתידיים. היא גם מניחה התפלגות נורמלית של התשואות, הנחה שלא תמיד מתקיימת בשוקי ההון, במיוחד באירועי קיצון.</p>
-<h2 id="-">בטא- מדידת הסיכון היחסי לשוק</h2>
+<h3 id="beta">בטא- מדידת הסיכון היחסי לשוק</h3>
 <p><strong>בטא</strong> (Beta, <span class="arithmatex">\(\beta\)</span>) היא מדד ל<strong>סיכון יחסי</strong>, המבטאת את הרגישות של תשואת נכס או תיק השקעות לתנודות בשוק הכולל. היא מודדת את המתאם הסטטיסטי בין התשואות של הנכס לבין התשואות של מדד ייחוס (Benchmark) רחב, המייצג את השוק (לדוגמה, מדד S&amp;P 500 בארה"ב או מדד ת"א 125 בישראל).</p>
 <p><strong>חישוב ופרשנות</strong>  </p>
 <p>בטא מחושבת כיחס בין השונות המשותפת (Covariance) של תשואות הנכס ותשואות השוק, לבין השונות (Variance) של תשואות השוק.</p>
@@ -870,15 +1102,15 @@
 </ul>
 <p><strong>יתרונות:</strong> בטא מסייעת למשקיעים להבין את מידת החשיפה השיטתית של נכס לסיכון השוק, ולנהל את הסיכון הכולל של תיק השקעות באמצעות שילוב נכסים בעלי ערכי בטא שונים. היא מהווה מרכיב מרכזי במודל CAPM (Capital Asset Pricing Model), המעריך את התשואה הדרושה מנכס בהתחשב בסיכון השיטתי שלו.</p>
 <p><strong>מגבלות:</strong> בטא מבוססת על נתונים היסטוריים, וקשרי המתאם יכולים להשתנות לאורך זמן. היא אינה מביאה בחשבון סיכונים ספציפיים לחברה או לנכס (סיכון בלתי שיטתי), אשר ניתנים לפיזור באמצעות גיוון. בנוסף, מודל הבטא מניח קשר לינארי בין הנכס לשוק, שלא תמיד קיים בפועל.</p>
-<h2 id="_3">ירידה מקסימלית</h2>
+<h3 id="mdd">ירידה מקסימלית</h3>
 <p>ירידה מקסימלית (Maximum Drawdown-MDD) מדד סיכון המשקף את ההפסד המקסימלי באחוזים מנקודת שיא (Peak) ועד לנקודת שפל (Trough) עוקבת, בטרם נרשמה התאוששות לנקודת שיא חדשה. במילים אחרות, זהו המדד הגרוע ביותר של הפסד שחוותה ההשקעה או התיק בין שתי נקודות זמן.</p>
 <p><strong>חישוב ופרשנות</strong> </p>
 <p>מדד הירידה המקסימלית מחושב כהפרש באחוזים בין ערך השיא לערך השפל הנמוך ביותר לאחר מכן, בטרם התאוששות.</p>
 <div class="arithmatex">\[\text{MDD} = \frac{\text{Peak Value} - \text{Trough Value}}{\text{Peak Value}}\]</div>
-<p>לדוגמה, אם תיק השקעות הגיע לשיא של 1,000,000 ש"ח וירד לאחר מכן ל-700,000 ש"ח בטרם החל לעלות שוב, ה-MDD יהיה 30%. מדד זה משקף את הסיכון בפועל שחווה משקיע שהיה מושקע בתיק בתקופה זו ונשאר בו. הוא מדד "כאב" – כמה ירדה ההשקעה מהשיא שלה, ועל כמה "כסף על הנייר" נאלץ המשקיע לוותר באופן זמני.</p>
+<p>לדוגמה, אם תיק השקעות הגיע לשיא של 1,000,000 ש"ח וירד לאחר מכן ל-700,000 ש"ח בטרם החל לעלות שוב, ה-MDD יהיה 30%. מדד זה משקף את הסיכון בפועל שחווה משקיע שהיה מושקע בתיק בתקופה זו ונשאר בו. הוא מדד "כאב" - כמה ירדה ההשקעה מהשיא שלה, ועל כמה "כסף על הנייר" נאלץ המשקיע לוותר באופן זמני.</p>
 <p><strong>יתרונות:</strong> MDD הוא מדד אינטואיטיבי וקל להבנה עבור משקיעים, כיוון שהוא מתאר הפסד אמיתי שעלול להתרחש. הוא חשוב במיוחד עבור משקיעים הרגישים להפסדים ופחות לתנודתיות כללית. הוא גם משלים את סטיית התקן בכך שהוא מתמקד בסיכון היורד בלבד ("סיכון בצד השלילי").</p>
 <p><strong>מגבלות:</strong> MDD מבוסס על נתונים היסטוריים ומושפע מאוד מאירועי קיצון. הוא מייצג רק את ההפסד הגדול ביותר, ואינו משקף את התדירות או העוצמה של ירידות קטנות יותר. בנוסף, הוא אינו מתחשב בזמן שנדרש להתאוששות מהירידה (Recovery Time), שהוא היבט חשוב בפסיכולוגיית המשקיעים.</p>
-<h2 id="_4">ערך הנתון בסיכון</h2>
+<h3 id="var">ערך הנתון בסיכון</h3>
 <p>ערך הנתון בסיכון Value at Risk (VaR)  הוא מדד סיכון המעריך את ההפסד המקסימלי הצפוי של תיק השקעות או נכס בטווח זמן נתון וברמת ביטחון סטטיסטית מסוימת. במילים אחרות, VaR מנסה לענות על השאלה: "מהו ההפסד המקסימלי שאני צפוי לחוות ב-(X) הימים הקרובים, ברמת סבירות של (Y)%?"</p>
 <p>**חישוב ופרשנות</p>
 <p>VaR נמדד בדרך כלל במונחי מטבע, אך יכול להיות נקוב גם באחוזים. לדוגמה, VaR יומי של 1,000,000 ש"ח ברמת סמך של 99% אומר שיש סבירות של 1% (או פעם אחת במאה ימים) שההפסד היומי של התיק יעלה על 1,000,000 ש"ח.</p>
@@ -896,11 +1128,11 @@
 </ul>
 <p><strong>יתרונות:</strong> VaR מספק למנהלים ולרגולטורים מדד סיכון אחיד וקל להשוואה בין יחידות עסקיות שונות או תיקים שונים. הוא מסייע בהקצאת הון ובתכנון חירום.</p>
 <p><strong>מגבלות:</strong> VaR אינו מודד את ההפסד <strong>מעבר</strong> לרמת הסמך (כלומר, הוא לא אומר מה גודל ההפסד ב-1% המקרים הגרועים ביותר). הוא מבוסס על הנחות שעלולות להיות מופרות בשוקי קיצון (כמו התפלגות נורמלית). בנוסף, שיטות חישוב שונות יכולות להניב תוצאות שונות, והוא עלול לעודד התנהגות של "ציד תשואה" כדי לעמוד ביעדי VaR. מדד משלים ל-VaR הוא <strong>Conditional VaR (CVaR)</strong> או <strong>Expected Shortfall</strong>, שמודד את התוחלת של ההפסדים מעבר לנקודת ה-VaR.</p>
-<h2 id="-_1">מדדי ביצועים מתוקנני-סיכון</h2>
+<h2 id="-">מדדי ביצועים מתוקנני-סיכון</h2>
 <p>מדדים אלו מאפשרים למשקיעים להעריך לא רק את התשואה של השקעה, אלא גם את יעילותה ביחס לסיכון שנלקח. הם עונים על השאלה: "כמה תשואה קיבלתי עבור יחידת סיכון שנטלתי?"</p>
-<h3 id="_5">מדד שארפ</h3>
+<h3 id="sharpe-ratio">מדד שארפ</h3>
 <p>מדד שארפ (Sharpe Ratio) הוא אחד המדדים הנפוצים ביותר להערכת ביצועים מתוקנני-סיכון. הוא מודד את התשואה העודפת (תשואת התיק פחות תשואת נכס חסר סיכון) ביחס לסטיית התקן (הסיכון הכולל) של התיק.</p>
-<p>**חישוב ופרשנות</p>
+<p><strong>חישוב ופרשנות</strong></p>
 <div class="arithmatex">\[\text{Sharpe Ratio} = \frac{\text{R}_{\text{p}} - \text{R}_{\text{f}}}{\sigma_{\text{p}}}\]</div>
 <p>כאשר:</p>
 <ul>
@@ -915,7 +1147,7 @@
 <p>מדד שארפ גבוה יותר מצביע על תשואה עודפת גבוהה יותר ליחידת סיכון. כלומר, תיק עם מדד שארפ גבוה יותר נחשב יעיל יותר בהפקת תשואה בהתחשב בתנודתיות הכוללת שלו. מדד שארפ של 1 ומעלה נחשב בדרך כלל טוב, ומדד גבוה מ-2 נחשב מצוין.</p>
 <p><strong>יתרונות:</strong> פשוט להבנה ושימושי להשוואה בין תיקי השקעות שונים. מתחשב הן בתשואה והן בסיכון הכולל של התיק.</p>
 <p><strong>מגבלות:</strong> מניח התפלגות נורמלית של התשואות. אינו מבחין בין סיכון עליות לסיכון ירידות (כלומר, סטיית תקן כוללת גם תנודות חיוביות). מושפע מאוד מבחירת התשואה חסרת הסיכון.</p>
-<h3 id="_6">מדד טריינור</h3>
+<h3 id="treynor-ratio">מדד טריינור</h3>
 <p>מדד טריינור (Treynor Ratio) דומה למדד שארפ, אך הוא מודד את התשואה העודפת ביחס ל<strong>סיכון השיטתי</strong> של התיק (הנמדד על ידי בטא), ולא ביחס לסיכון הכולל (סטיית תקן).</p>
 <p><strong>חישוב ופרשנות:</strong></p>
 <div class="arithmatex">\[\text{Treynor Ratio} = \frac{\text{R}_{\text{p}} - \text{R}_{\text{f}}}{\beta_{\text{p}}}\]</div>
@@ -934,10 +1166,12 @@
 <p>מדד טריינור גבוה יותר מעיד על תשואה עודפת גבוהה יותר ליחידת סיכון שיטתי. הוא רלוונטי במיוחד עבור תיקים מגוונים היטב, בהם הסיכון הספציפי פוזר במידה רבה, והסיכון השיטתי הוא הגורם הדומיננטי.</p>
 <p><strong>יתרונות:</strong> מתמקד בסיכון שאינו ניתן לפיזור, ולכן מתאים להערכת ביצועי מנהלי השקעות של תיקים מפוזרים היטב.</p>
 <p><strong>מגבלות:</strong> כמו מדד שארפ, מניח קשר לינארי. מושפע מאי-דיוקים בחישוב בטא. אינו מתאים לתיקים שאינם מגוונים היטב, שבהם הסיכון הספציפי משחק תפקיד משמעותי.</p>
-<h3 id="calmar-ratio">מדד קלמר (Calmar Ratio)</h3>
+<h3 id="calmar-ratio">מדד קלמר</h3>
 <p><strong>מדד קלמר</strong> הוא מדד ביצועים מתוקן-סיכון המתמקד בסיכון היורד (Downside Risk). הוא משווה את התשואה הממוצעת השנתית של התיק לבין ה<strong>Maximum Drawdown (MDD)</strong> שחווה התיק בתקופה הנמדדת.</p>
 <p><strong>חישוב ופרשנות</strong></p>
-<div class="arithmatex">\[\text{Calmar Ratio} = \frac{\text{Compound Annual Growth Rate (CAGR)}}{\text{Maximum Drawdown (MDD)}}\]</div>
+<div class="arithmatex">\[
+\text{Calmar Ratio} = \frac{\text{Compound Annual Growth Rate (CAGR)}}{\text{Maximum Drawdown (MDD)}}
+\]</div>
 <ul>
 <li>
 <p><span class="arithmatex">\(CAGR\)</span> = שיעור הצמיחה השנתי המורכב של התיק.</p>
@@ -989,10 +1223,12 @@
 <p>מדד קלמר גבוה יותר מצביע על תשואה גבוהה יותר ביחס להפסד המקסימלי שחווה התיק. לדוגמה, תיק שהניב 15% CAGR עם MDD של 10% יקבל מדד קלמר של 1.5. תיק שהניב 15% עם MDD של 30% יקבל מדד קלמר של 0.5.</p>
 <p><strong>יתרונות:</strong> אינטואיטיבי ומעשי מאוד עבור משקיעים הרגישים להפסדים גדולים. מתמקד בתשואה ביחס ל"כאב" האמיתי שחווה המשקיע. שימושי להערכת קרנות גידור ואסטרטגיות מסחר שנועדו לצמצם ירידות.</p>
 <p><strong>מגבלות:</strong> מושפע מאירוע ה-MDD היחיד הגדול ביותר, ואינו מתחשב בתדירות או עוצמת ירידות קטנות יותר. מושפע מאוד מאורך תקופת המדידה.</p>
-<h3 id="sortino-ratio">מדד סורטינו (Sortino Ratio)</h3>
-<p><strong>מדד סורטינו</strong> הוא שיפור של מדד שארפ, המתמקד אך ורק ב<strong>סיכון בצד השלילי (Downside Risk)</strong>. במקום להשתמש בסטיית התקן הכוללת (שכוללת גם תנודתיות חיובית), מדד סורטינו משתמש ב<strong>סטיית תקן יורדת (Downside Deviation)</strong> – מדידה של פיזור התשואות רק מתחת לרף מסוים (לרוב תשואה חסרת סיכון או אפס).</p>
+<h3 id="sortino-ratio">מדד סורטינו</h3>
+<p><strong>מדד סורטינו</strong> (Sortino Ratio) הוא שיפור של מדד שארפ, המתמקד אך ורק ב<strong>סיכון בצד השלילי (Downside Risk)</strong>. במקום להשתמש בסטיית התקן הכוללת (שכוללת גם תנודתיות חיובית), מדד סורטינו משתמש ב<strong>סטיית תקן יורדת (Downside Deviation)</strong> - מדידה של פיזור התשואות רק מתחת לרף מסוים (לרוב תשואה חסרת סיכון או אפס).</p>
 <p><strong>חישוב ופרשנות</strong></p>
-<div class="arithmatex">\[\text{Sortino Ratio} = \frac{\text{R}_{\text{p}} - \text{R}_{\text{f}}}{\text{Downside Deviation}}\]</div>
+<div class="arithmatex">\[
+\text{Sortino Ratio} = \frac{\text{R}_{\text{p}} - \text{R}_{\text{f}}}{\text{Downside Deviation}}
+\]</div>
 <p>כאשר:</p>
 <ul>
 <li>
@@ -1024,7 +1260,7 @@
 <li><strong>ממוצע ריבועי הסטיות:</strong> סכם את כל הסטיות השליליות בריבוע וחלק במספר תקופות המדידה הכולל (N), או במספר התשואות שזוהו כ"יורדות". לרוב, נוהגים לחלק במספר התצפיות הכולל כדי לשמור על עקביות עם חישוב סטיית תקן רגילה. התוצאה היא <strong>שונות יורדת (Downside Variance)</strong>.</li>
 <li><strong>שורש ריבועי:</strong> קח שורש ריבועי של השונות היורדת. זוהי ה-Downside Deviation.</li>
 </ol>
-<p><strong>הנוסחה המתמטית:</strong></p>
+<p><strong>הצגה מתמטית:</strong></p>
 <div class="arithmatex">\[
 \text{Downside Deviation} = \sqrt{ \frac{1}{N} \sum_{t=1}^{N} \left( \max(0, T - R_t) \right)^2 }
 \]</div>
@@ -1099,7 +1335,7 @@
 <p>מדד סורטינו גבוה יותר מצביע על תשואה עודפת גבוהה יותר ליחידת סיכון יורד. הוא נותן תמונה מדויקת יותר של יעילות ההשקעה עבור משקיעים שחוששים בעיקר מהפסדים ולא מתנודתיות כללית (כולל עליות).</p>
 <p><strong>יתרונות:</strong> רלוונטי יותר למשקיעים אסימטריים בגישתם לסיכון (כלומר, כאלה שפחות מוטרדים מעליות חדות ויותר מירידות חדות) ומספק תמונה מדויקת יותר של הסיכון האמיתי "הרע".</p>
 <p><strong>מגבלות:</strong> קשה יותר לחישוב מסטיית תקן רגילה. בחירת סף התשואה (סף מתחתיו נמדדת הסטייה השלילית) יכולה להשפיע על התוצאות.</p>
-<p>לסיכום, הבנת המדדים השונים להערכת סיכון – החל מסטיית תקן פשוטה ועד למדדי ביצועים מתוקני-סיכון – מאפשרת למשקיעים לנתח את תיקי ההשקעות שלהם בצורה מקיפה יותר. שילוב של מספר מדדים אלו מספק תמונה שלמה יותר של פרופיל הסיכון-תשואה של ההשקעה, ומסייע למשקיעים לקבל החלטות מושכלות התואמות את יעדיהם ואת סבילותם לסיכון.</p>
+<p>לסיכום, הבנת המדדים השונים להערכת סיכון - החל מסטיית תקן פשוטה ועד למדדי ביצועים מתוקני-סיכון - מאפשרת למשקיעים לנתח את תיקי ההשקעות שלהם בצורה מקיפה יותר. שילוב של מספר מדדים אלו מספק תמונה שלמה יותר של פרופיל הסיכון-תשואה של ההשקעה, ומסייע למשקיעים לקבל החלטות מושכלות התואמות את יעדיהם ואת סבילותם לסיכון.</p>
 
 
 
@@ -1120,27 +1356,82 @@
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  חזרה למעלה
+</button>
+        
       </main>
       
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="כותרת תחתונה" >
         
-<div class="md-footer">
-    <div class="md-footer-meta">
-        <div class="md-footer-copyright">
-            &copy; 2025 הראל 
-        </div>
+          
+          <a href="../absolute-and-relative-investment-risk/" class="md-footer__link md-footer__link--prev" aria-label="הקודם: סיכון מוחלט וסיכון יחסי">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                הקודם
+              </span>
+              <div class="md-ellipsis">
+                סיכון מוחלט וסיכון יחסי
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../scenario-analysis/" class="md-footer__link md-footer__link--next" aria-label="הבא: ניתוח תרחישים">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                הבא
+              </span>
+              <div class="md-ellipsis">
+                ניתוח תרחישים
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Harel Karni
     </div>
+  
+  
 </div>
-
+      
+    </div>
+  </div>
+</footer>
       
     </div>
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["toc.follow", "navigation.instant", "navigation.instant.progressive", "navigation.indexes", "navigation.blog", "navigation.path", "navigation.tracking", "navigation.prune", "navigation.expand", "navigation.expandable", "navigation.scroll"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u05d4\u05d5\u05e2\u05ea\u05e7 \u05dc\u05dc\u05d5\u05d7", "clipboard.copy": "\u05d4\u05e2\u05ea\u05e7\u05d4 \u05dc\u05dc\u05d5\u05d7", "search.result.more.one": "\u05e2\u05d5\u05d3 \u05d0\u05d7\u05d3 \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.more.other": "\u05e2\u05d5\u05d3 # \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.none": "\u05d0\u05d9\u05df \u05de\u05e1\u05de\u05db\u05d9\u05dd \u05ea\u05d5\u05d0\u05de\u05d9\u05dd", "search.result.one": "\u05de\u05e1\u05de\u05da1 \u05ea\u05d5\u05d0\u05dd", "search.result.other": "# \u05de\u05e1\u05de\u05da \u05ea\u05d5\u05d0\u05dd", "search.result.placeholder": "\u05d9\u05e9 \u05dc\u05d4\u05e7\u05dc\u05d9\u05d3 \u05db\u05d3\u05d9 \u05dc\u05d4\u05ea\u05d7\u05d9\u05dc \u05dc\u05d7\u05e4\u05e9", "search.result.term.missing": "\u05d7\u05e1\u05e8", "select.version": "\u05d1\u05d7\u05d9\u05e8\u05ea \u05d2\u05e8\u05e1\u05d4"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["toc.follow", "navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.path", "navigation.tracking", "navigation.prune", "navigation.expand", "navigation.top", "navigation.footer", "content.tooltips", "header.autohide", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u05d4\u05d5\u05e2\u05ea\u05e7 \u05dc\u05dc\u05d5\u05d7", "clipboard.copy": "\u05d4\u05e2\u05ea\u05e7\u05d4 \u05dc\u05dc\u05d5\u05d7", "search.result.more.one": "\u05e2\u05d5\u05d3 \u05d0\u05d7\u05d3 \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.more.other": "\u05e2\u05d5\u05d3 # \u05d1\u05d3\u05e3 \u05d4\u05d6\u05d4", "search.result.none": "\u05d0\u05d9\u05df \u05de\u05e1\u05de\u05db\u05d9\u05dd \u05ea\u05d5\u05d0\u05de\u05d9\u05dd", "search.result.one": "\u05de\u05e1\u05de\u05da1 \u05ea\u05d5\u05d0\u05dd", "search.result.other": "# \u05de\u05e1\u05de\u05da \u05ea\u05d5\u05d0\u05dd", "search.result.placeholder": "\u05d9\u05e9 \u05dc\u05d4\u05e7\u05dc\u05d9\u05d3 \u05db\u05d3\u05d9 \u05dc\u05d4\u05ea\u05d7\u05d9\u05dc \u05dc\u05d7\u05e4\u05e9", "search.result.term.missing": "\u05d7\u05e1\u05e8", "select.version": "\u05d1\u05d7\u05d9\u05e8\u05ea \u05d2\u05e8\u05e1\u05d4"}, "version": null}</script>
     
     
       <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
@@ -1150,6 +1441,10 @@
         <script src="../../assets/javascripts/auto-render.min.js"></script>
       
         <script src="../../assets/javascripts/katex-init.js"></script>
+      
+        <script src="../../assets/javascripts/tablesort.min.js"></script>
+      
+        <script src="../../assets/javascripts/tablesort.js"></script>
       
     
   </body>

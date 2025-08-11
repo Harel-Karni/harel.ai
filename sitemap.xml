@@ -2,46 +2,146 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://harel.ai/</loc>
-         <lastmod>2025-07-26</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://harel.ai/About/</loc>
-         <lastmod>2025-07-26</lastmod>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/About/code-example/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/About/privacy/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/Investment-portfolio-models/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/Investment-portfolio-models/Pensions%20in%20Chile/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/Investment-portfolio-models/apt/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/Investment-portfolio-models/black_litterman/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/Investment-portfolio-models/capm/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/Investment-portfolio-models/dynamic_portfolio_optimization/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/Investment-portfolio-models/equal_risk_contribution/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/Investment-portfolio-models/equal_risk_contribution1/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/Investment-portfolio-models/esg/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/Investment-portfolio-models/factor_models/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/Investment-portfolio-models/fama_french/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/Investment-portfolio-models/intro/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/Investment-portfolio-models/liability_driven_investing/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/Investment-portfolio-models/mean_variance_optimization/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/Investment-portfolio-models/model_testing/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/Investment-portfolio-models/return/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/Investment-portfolio-models/return1/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/Investment-portfolio-models/robust_optimization/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/Investment-portfolio-models/jupyter/mean-variance-optimization/</loc>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://harel.ai/Investment-risk/</loc>
-         <lastmod>2025-07-26</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://harel.ai/Investment-risk/absolute-and-relative-investment-risk/</loc>
-         <lastmod>2025-07-26</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://harel.ai/Investment-risk/intro/</loc>
-         <lastmod>2025-07-26</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://harel.ai/Investment-risk/measures/</loc>
-         <lastmod>2025-07-26</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://harel.ai/Investment-risk/risk-appetite/</loc>
-         <lastmod>2025-07-26</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://harel.ai/Investment-risk/risk-reduction/</loc>
-         <lastmod>2025-07-26</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://harel.ai/Investment-risk/risk-reward/</loc>
-         <lastmod>2025-07-26</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://harel.ai/Investment-risk/scenario-analysis/</loc>
-         <lastmod>2025-07-26</lastmod>
+         <lastmod>2025-08-11</lastmod>
     </url>
     <url>
          <loc>https://harel.ai/Investment-risk/sensitivity-analysis/</loc>
-         <lastmod>2025-07-26</lastmod>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/Machine_learning/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/Machine_learning/challenges_ml/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/Machine_learning/common_ml_algorithms/</loc>
+         <lastmod>2025-08-11</lastmod>
+    </url>
+    <url>
+         <loc>https://harel.ai/Machine_learning/intro/</loc>
+         <lastmod>2025-08-11</lastmod>
     </url>
 </urlset>
