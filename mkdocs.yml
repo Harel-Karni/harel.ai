@@ -119,21 +119,21 @@ nav:
       - מבוא: Investment-portfolio-models/index.md
       - ניהול תיקי השקעות: Investment-portfolio-models/intro.md
       - מודל מרקוביץ: Investment-portfolio-models/mean_variance_optimization.md
-      - בלאק ליטרמן: Investment-portfolio-models/black_litterman.md
       - מודל תמחור נכסים פיננסיים (CAPM): Investment-portfolio-models/capm.md
       - מודל תמחור נכסים פיננסיים מול מודל מרקוביץ': Investment-portfolio-models/capm_vs_mean_variance.md
+      #      - בלאק ליטרמן: Investment-portfolio-models/black_litterman.md
       - APT: Investment-portfolio-models/apt.md
-      - פאמה פראנץ': Investment-portfolio-models/fama_french.md
-      - מודלים דינמיים: Investment-portfolio-models/dynamic_portfolio_optimization.md
-      - תרומת סיכון שוה: Investment-portfolio-models/equal_risk_contribution.md
-      - תרומת סיכון שווה: Investment-portfolio-models/equal_risk_contribution1.md
-      - מודל גורמים: Investment-portfolio-models/factor_models.md
-      - מודלים מונעי אילוצים: Investment-portfolio-models/liability_driven_investing.md
-      - אופטימיזציה חזקה: Investment-portfolio-models/robust_optimization.md
-      - ESG: Investment-portfolio-models/esg.md
-      - תיקוף מודלים: Investment-portfolio-models/model_testing.md
-      - מדידת תשואה: Investment-portfolio-models/return.md
-      - מדידת תשואה1: Investment-portfolio-models/return1.md
+      #- פאמה פראנץ': Investment-portfolio-models/fama_french.md
+      #- מודלים דינמיים: Investment-portfolio-models/dynamic_portfolio_optimization.md
+      #- תרומת סיכון שוה: Investment-portfolio-models/equal_risk_contribution.md
+      #- תרומת סיכון שווה: Investment-portfolio-models/equal_risk_contribution1.md
+      #- מודל גורמים: Investment-portfolio-models/factor_models.md
+      #- מודלים מונעי אילוצים: Investment-portfolio-models/liability_driven_investing.md
+      #- אופטימיזציה חזקה: Investment-portfolio-models/robust_optimization.md
+      #- ESG: Investment-portfolio-models/esg.md
+      #- תיקוף מודלים: Investment-portfolio-models/model_testing.md
+      #- מדידת תשואה: Investment-portfolio-models/return.md
+      #- מדידת תשואה1: Investment-portfolio-models/return1.md
 
   #- לימוד מכונה:
   #    - מבוא: Machine_learning/index.md
