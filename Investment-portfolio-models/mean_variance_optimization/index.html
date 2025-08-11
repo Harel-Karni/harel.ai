@@ -1203,18 +1203,29 @@ E(R_p)&amp;=\sum_{i=1}^{3} w_i\,E(R_i) \\[1em]
 <div class="arithmatex">\[
 \begin{aligned}
 \sigma_p^{2} &amp;= {w}^\top\,\Sigma\, {w} \\[1em]
-         &amp;= w_A^2\sigma_A^2 + w_B^2\sigma_B^2 + w_C^2\sigma_C^2 +
-          2w_Aw_B\sigma_A\sigma_B\rho_{AB} + 2w_Aw_C\sigma_A\sigma_C\rho_{AC} + 2w_Bw_C\sigma_B\sigma_C\rho_{BC}
+         &amp;= w_A^2\sigma_A^2 + w_B^2\sigma_B^2 \\
+         &amp;\quad+ w_C^2\sigma_C^2 \\
+         &amp;\quad+ 2w_Aw_B\sigma_A\sigma_B\rho_{AB} \\
+         &amp;\quad+ 2w_Aw_C\sigma_A\sigma_C\rho_{AC} \\
+         &amp;\quad+ 2w_Bw_C\sigma_B\sigma_C\rho_{BC}
 \end{aligned}
 \]</div>
 <p><strong>השונות של כל מניה (משוקללת):</strong></p>
-<p><span class="arithmatex">\(w_A^2\sigma_A^2 = 0.40^2 \times 0.15^2 = 0.16 \times 0.0225 = 0.0036\)</span></p>
-<p><span class="arithmatex">\(w_B^2\sigma_B^2 = 0.30^2 \times 0.18^2 = 0.09 \times 0.0324 = 0.002916\)</span></p>
-<p><span class="arithmatex">\(w_C^2\sigma_C^2 = 0.30^2 \times 0.22^2 = 0.09 \times 0.0484 = 0.004356\)</span></p>
+<div class="arithmatex">\[
+\begin{aligned}
+    w_A^2\sigma_A^2 &amp;= 0.40^2 \times 0.15^2 = 0.16 \times 0.0225 = 0.0036 \\
+    w_B^2\sigma_B^2 &amp;= 0.30^2 \times 0.18^2 = 0.09 \times 0.0324 = 0.002916 \\
+    w_C^2\sigma_C^2 &amp;= 0.30^2 \times 0.22^2 = 0.09 \times 0.0484 = 0.004356 
+\end{aligned}
+\]</div>
 <p><strong>השונות המשותפת (Covariance) בין כל זוג מניות:</strong></p>
-<p><span class="arithmatex">\(2w*Aw_B\sigma_A\sigma_B\rho*{AB} = 2 \times 0.40 \times 0.30 \times 0.15 \times 0.18 \times 0.30 = 0.00243\)</span></p>
-<p><span class="arithmatex">\(2w*Aw_C\sigma_A\sigma_C\rho*{AC} = 2 \times 0.40 \times 0.30 \times 0.15 \times 0.22 \times 0.20 = 0.001584\)</span></p>
-<p><span class="arithmatex">\(2w*Bw_C\sigma_B\sigma_C\rho*{BC} = 2 \times 0.30 \times 0.30 \times 0.18 \times 0.22 \times 0.50 = 0.003564\)</span></p>
+<div class="arithmatex">\[
+\begin{aligned}
+    2w*Aw_B\sigma_A\sigma_B\rho*{AB} &amp;= 2 \times 0.40 \times 0.30 \times 0.15 \times 0.18 \times 0.30 = 0.00243 \\
+    2w*Aw_C\sigma_A\sigma_C\rho*{AC} &amp;= 2 \times 0.40 \times 0.30 \times 0.15 \times 0.22 \times 0.20 = 0.001584 \\
+    2w*Bw_C\sigma_B\sigma_C\rho*{BC} &amp;= 2 \times 0.30 \times 0.30 \times 0.18 \times 0.22 \times 0.50 = 0.003564 
+\end{aligned}
+\]</div>
 <p><strong>חיבור כל הרכיבים לשונות התיק:</strong></p>
 <div class="arithmatex">\[
 \sigma_p^2 = 0.0036 + 0.002916 + 0.004356 + 0.00243 + 0.001584 + 0.003564 = 0.01845
@@ -1238,62 +1249,54 @@ E(R_p)&amp;=\sum_{i=1}^{3} w_i\,E(R_i) \\[1em]
 <ol>
 <li>
 <p><strong>בניית צירופי משקלות ניירות בתיק:</strong> השלב הראשון הוא לתת למחשב לבנות אלפי צירופי משקלות שונים עבור המניות א', ב' ו-ג'.</p>
-<ul>
-<li>לדוגמה: (100%, 0%, 0%), (99%, 1%, 0%), (50%, 25%, 25%), (33.3%, 33.3%, 33.3%) וכו'. התנאי היחיד הוא שסך כל המשקלות יהיה תמיד 100%. (אגב, בהנתן היכולת למכור בחסר- ניתן גם להתעלם ממגבלה זו)</li>
-</ul>
+</li>
+<li>
+<p>לדוגמה: (100%, 0%, 0%), (99%, 1%, 0%), (50%, 25%, 25%), (33.3%, 33.3%, 33.3%) וכו'. התנאי היחיד הוא שסך כל המשקלות יהיה תמיד 100%. (אגב, בהנתן היכולת למכור בחסר- ניתן גם להתעלם ממגבלה זו)</p>
 </li>
 <li>
 <p><strong>חישוב תשואה וסיכון לכל תיק:</strong> עבור <strong>כל אחד</strong> מאלפי הצירופים שנבחרו בשלב הראשון יש לחשב את הפרמטרים שחישבנו בחלק הקודם: שלמדנו:</p>
-<ul>
-<li>חישוב <strong>תשואה צפויה</strong> (<span class="arithmatex">\(E(R_p​)\)</span>)</li>
-<li>חישוב <strong>סטיית תקן</strong> (<span class="arithmatex">\(σ_p\)</span>​)</li>
-</ul>
+</li>
+<li>
+<p>חישוב <strong>תשואה צפויה</strong> (<span class="arithmatex">\(E(R_p​)\)</span>)</p>
+</li>
+<li>
+<p>חישוב <strong>סטיית תקן</strong> (<span class="arithmatex">\(σ_p\)</span>​)</p>
 </li>
 <li>
 <p><strong>מיפוי התיקים על גרף:</strong> יוצרים גרף פיזור (Scatter Plot) שבו:</p>
-<ul>
-<li><strong>ציר X</strong> הוא הסיכון (סטיית תקן, <span class="arithmatex">\(σ_p\)</span>).</li>
+</li>
+<li>
+<p><strong>ציר X</strong> הוא הסיכון (סטיית תקן, <span class="arithmatex">\(σ_p\)</span>).</p>
+</li>
 <li><strong>ציר Y</strong> הוא התשואה הצפויה (<span class="arithmatex">\(E(R_p​)\)</span>).</li>
-<li>כל נקודה בגרף מייצגת תיק אחד עם הרכב משקלות ספציפי.</li>
-</ul>
+<li>
+<p>כל נקודה בגרף מייצגת תיק אחד עם הרכב משקלות ספציפי.</p>
 </li>
 <li>
 <p><strong>זיהוי החזית היעילה:</strong> לאחר שכל הנקודות ממופות, "ענן" של נקודות יתקבל בגרף. <strong>החזית היעילה היא המעטפת העליונה-שמאלית של אותו ענן נקודות</strong>. זוהי העקומה שמחברת את כל התיקים שאין טובים מהם.</p>
 </li>
 <li>
 <p><strong>זיהוי נקודות עניין מיוחדות על החזית היעילה:</strong> על העקומה עצמה יש כמה תיקים בעלי חשיבות מיוחדת:</p>
-<ul>
+</li>
 <li>
 <p><strong>תיק מינימום שונות (MVP - Minimum Variance Portfolio):</strong> זוהי הנקודה <strong>השמאלית ביותר</strong> על העקומה. זהו התיק בעל <strong>הסיכון הנמוך ביותר</strong> מכל התיקים האפשריים שניתן להרכיב מהמניות.</p>
 </li>
 <li>
 <p><strong>התיק המשיק (Tangency Portfolio):</strong> זהו התיק ה"כוכב" של החזית היעילה. זהו התיק שמציע את יחס התגמול-לסיכון הטוב ביותר, הנמדד על ידי <strong>יחס שארפ (Sharpe Ratio)</strong>. באופן גרפי, זהו התיק שבו קו ישר (CML) היוצא מנקודת "נכס חסר סיכון" (למשל, מק"מ) משיק לחזית היעילה. רוב מנהלי ההשקעות שואפים להחזיק בתיק זה ולשלב אותו עם הנכס חסר הסיכון.</p>
 </li>
-</ul>
-</li>
 </ol>
 <p>להלן הדגמה של חישוב החזית היעילה עם גרף "Efficient Frontier" בסימולציה ב-Python</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">מודל מרקוביץ- פלט</label><label for="__tabbed_1_2">Python</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><img alt="efficient_frontier" src="../../assets/images/efficient_frontier.svg" />
-בגרף המתואר :</p>
+<p><img alt="efficient_frontier" src="../../assets/images/efficient_frontier.svg" /></p>
+<p>בגרף המתואר :</p>
 <ul>
-<li>
-<p><strong>הענן האפור</strong> מדגים את תוצאות צירופי כל המשקלים של המניות בתיק.</p>
-</li>
-<li>
-<p><strong>הקו האדום</strong> - "החזית היעילה" עקומה שמחברת את כל התיקים שאין טובים מהם. רק הצירופים מהנקודה הכחולה ומעלה על גבי הקו האדום - מהווים את החזית היעילה שבתיק. </p>
-</li>
-<li>
-<p><strong>הקו המקווקו הכחול</strong>: "קו השוק" <strong>(CML)</strong>. שילוב של נכס חסר סיכון בתיק </p>
-</li>
-<li>
-<p><strong>הנקודה הכחולה</strong>:  זהו התיק בעל <strong>הסיכון הנמוך ביותר</strong> מכל התיקים האפשריים שניתן להרכיב מהמניות (תיק MVP).</p>
-</li>
-<li>
-<p><strong>הכוכב</strong>: זהו התיק שמציע את יחס התגמול-לסיכון הטוב ביותר (Tangency Portfolio)</p>
-</li>
+<li><strong>הענן האפור</strong> מדגים את תוצאות צירופי כל המשקלים של המניות בתיק.</li>
+<li><strong>הקו האדום</strong> - "החזית היעילה" עקומה שמחברת את כל התיקים שאין טובים מהם. רק הצירופים מהנקודה הכחולה ומעלה על גבי הקו האדום - מהווים את החזית היעילה שבתיק.</li>
+<li><strong>הקו המקווקו הכחול</strong>: "קו השוק" <strong>(CML)</strong>. שילוב של נכס חסר סיכון בתיק</li>
+<li><strong>הנקודה הכחולה</strong>:  זהו התיק בעל <strong>הסיכון הנמוך ביותר</strong> מכל התיקים האפשריים שניתן להרכיב מהמניות (תיק MVP).</li>
+<li><strong>הכוכב</strong>: זהו התיק שמציע את יחס התגמול-לסיכון הטוב ביותר (Tangency Portfolio)</li>
 </ul>
 </div>
 <div class="tabbed-block">
