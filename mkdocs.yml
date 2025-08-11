@@ -3,9 +3,11 @@ site_url: https://harel.ai
 
 site_description: מדריך להשקעות בעזרת AI
 site_author: Harel Karni
+copyright: Copyright &copy; 2025 Harel Karni
 
 theme:
   name: material
+  #font: false
   #favicon: favicon.svg
   icon:
     logo: material/compass
@@ -14,46 +16,76 @@ theme:
   language: he
   direction: rtl
   palette:
-    scheme: default
-    primary: indigo
-    accent: green
-    toggle:
-      icon: material/brightness-7
-      name: Switch to dark mode
-
-  font:
-    text: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif
-
+    - scheme: default
+      accent: green
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      accent: green
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   features:
     - toc.follow
     - navigation.instant
-    - navigation.instant.progressive
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.indexes
-    - navigation.blog
     - navigation.path
     - navigation.tracking
     - navigation.prune
     - navigation.expand
-    - navigation.expandable
-    - navigation.scroll
+    - navigation.top
+    - navigation.footer
+    - content.tooltips
+    - header.autohide
+    - announce.dismiss
+
+#hooks:
+#  - hooks/slugify.py
 
 markdown_extensions:
   - admonition
-  - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - pymdownx.betterem
+  - pymdownx.blocks.caption
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
   - abbr
   - attr_list
   - md_in_html
+  - tables
+  - toc:
+      toc_depth: 1-3
+      permalink: false
+    #  anchorlink: true
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
+watch:
+  - includes
+
 extra_javascript:
   - assets/javascripts/katex.min.js
   - assets/javascripts/auto-render.min.js
   - assets/javascripts/katex-init.js
+  - assets/javascripts/tablesort.min.js
+  - assets/javascripts/tablesort.js
 
 extra_css:
   - assets/styles/extra.css
@@ -62,17 +94,16 @@ extra_css:
 
 plugins:
   - search
-  - macros 
-        
-  #- awesome-nav
+  - macros
+  - mkdocs-jupyter:
+      include_source: True
+      execute: False
+extra:
+  generator: false
 
 nav:
   - ברוכים הבאים: index.md
-  #- ניהול תיקי השקעות:
-  #    - מבוא: portfolio-management/index.md
-  #    - מודלים לבחירת מניות:
-  #        - מבוא: stock-selection/index.md
-  #        - בחירת מניות ב AI: stock-selection/ai.md
+
   - הסיכון:
       - מבוא: Investment-risk/index.md
       - הבנת המונח סיכון בהשקעות: Investment-risk/intro.md
@@ -84,4 +115,32 @@ nav:
       - היחס בין סיכון לסיכוי: Investment-risk/risk-reward.md
       - הפתחחת סיכונים: Investment-risk/risk-reduction.md
 
-  - אודות: About/index.md
+  - מודלים לניהול תיקי השקעות:
+      - מבוא: Investment-portfolio-models/index.md
+      - ניהול תיקי השקעות: Investment-portfolio-models/intro.md
+      - מודל מרקוביץ: Investment-portfolio-models/mean_variance_optimization.md
+      #- בלאק ליטרמן: Investment-portfolio-models/black_litterman.md
+      - CAPM: Investment-portfolio-models/capm.md
+      - APT: Investment-portfolio-models/apt.md
+      #- פאמה פראנץ': Investment-portfolio-models/fama_french.md
+      #- מודלים דינמיים: Investment-portfolio-models/dynamic_portfolio_optimization.md
+      #- תרומת סיכון שוה: Investment-portfolio-models/equal_risk_contribution.md
+      #- תרומת סיכון שווה: Investment-portfolio-models/equal_risk_contribution1.md
+      #- מודל גורמים: Investment-portfolio-models/factor_models.md
+      #- מודלים מונעי אילוצים: Investment-portfolio-models/liability_driven_investing.md
+      #- אופטימיזציה חזקה: Investment-portfolio-models/robust_optimization.md
+      #- ESG: Investment-portfolio-models/esg.md
+      #- תיקוף מודלים: Investment-portfolio-models/model_testing.md
+      #- מדידת תשואה: Investment-portfolio-models/return.md
+      #- מדידת תשואה1: Investment-portfolio-models/return1.md
+
+  #- לימוד מכונה:
+  #    - מבוא: Machine_learning/index.md
+  #    - מבוא ללימוד מכונה: Machine_learning/intro.md
+  #    - סוגי מודלים: Machine_learning/common_ml_algorithms.md
+  #    - אתגרים ביישום ML: Machine_learning/challenges_ml.md
+
+  - אודות:
+      - אודות: About/index.md
+      - פרטיות: About/privacy.md
+  #    - דוגמאות: About/code-example.md

@@ -1,22 +1,19 @@
+import re
+
 def define_env(env):
     """
-    This is the hook for the variables, macros and filters.
+    Hook for defining variables, macros, filters, and markdown transformations in MkDocs.
     """
+
+    # -----------------------
+    # Existing Macros
+    # -----------------------
+
     @env.macro
     def link_to(page_path, text=None, anchor=None):
-        """
-        Creates an internal link with a Material Design 'open in new' icon.
-        Parameters:
-        - page_path (str): Path to the Markdown file (e.g., 'investments/black-litterman.md')
-        - text (str, optional): The link text to display. Defaults to the page path.
-        - anchor (str, optional): Optional anchor to jump to within the target page (without the # symbol)
-        Returns:
-        A full HTML anchor tag with a Material icon prepended.
-        """
         if text is None:
             text = page_path
 
-        # Remove .md extension and ensure trailing slash
         clean_path = page_path.replace(".md", "/")
         if anchor:
             clean_path += f"#{anchor}"
@@ -25,9 +22,6 @@ def define_env(env):
 
     @env.macro
     def link_to_external(text, url):
-        """
-        External link with Material 'open in new' icon, opening in a new tab.
-        """
         icon_html = ":open_in_new:"
         return f'<a href="{url}" target="_blank" rel="noopener">{icon_html} {text}</a>'
     
@@ -41,3 +35,19 @@ def define_env(env):
     דף זה תחת בניה </br>
     נשוב בקרוב
     '''
+
+    @env.macro
+    def site_mail(mail_type='contact'):
+        """
+        Return a formatted email link with an icon.
+        Supported mail_type values: 'contact', 'support', 'sales'
+        """
+        email_map = {
+            'contact': 'contact@harel.ai',
+            'support': 'support@harel.ai',
+            'sales': 'sales@harel.ai'
+        }
+        email = email_map.get(mail_type, email_map['contact'])
+        icon_mail = ":material-mail:"
+        return f'<a href="mailto:{email}">{icon_mail} {email}</a>'
+            
