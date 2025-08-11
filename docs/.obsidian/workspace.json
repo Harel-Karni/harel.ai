@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "e6da1c9832cca0f5",
+        "id": "d197f72aa7988754",
         "type": "tabs",
         "children": [
           {
-            "id": "5b77d10deb0907d4",
+            "id": "6a87cada9cf0fd78",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Investment-portfolio-models/mean_variance_optimization.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "mean_variance_optimization"
+              "title": "כרטיסייה חדשה"
             }
           }
         ]
@@ -142,13 +138,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Investment-portfolio-models/mean_variance_optimization.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "מתאר של mean_variance_optimization"
+              "title": "מתווה"
             }
           },
           {
@@ -179,17 +174,18 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "5b77d10deb0907d4",
+  "active": "6a87cada9cf0fd78",
   "lastOpenFiles": [
-    "assets/images/efficient_frontier.svg",
+    "Investment-portfolio-models/capm_vs_mean_variance.md",
+    "Investment-portfolio-models/dynamic_portfolio_optimization.md",
     "Investment-portfolio-models/mean_variance_optimization.md",
+    "assets/images/efficient_frontier.svg",
     "Investment-portfolio-models/jupyter/efficient_frontier.svg",
     "Investment-portfolio-models/fama_french.md",
     "Investment-portfolio-models/intro.md",
     "Investment-portfolio-models/apt.md",
     "Investment-portfolio-models/black_litterman.md",
     "Investment-portfolio-models/capm.md",
-    "Investment-portfolio-models/dynamic_portfolio_optimization.md",
     "Investment-portfolio-models/equal_risk_contribution1.md",
     "Investment-portfolio-models/equal_risk_contribution.md",
     "index.md",
