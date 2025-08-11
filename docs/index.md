@@ -22,7 +22,7 @@ hide:
 העתיד של ההשקעות כבר כאן - נגיש, מובן, ופתוח לכל מי שרוצה לחשוב לטווח רחוק.
 
 ---
-
+<!--
 <div class="grid cards" markdown>
 
 -   :material-clock-fast:{ .xl .middle .color-primary} __הפסיכולוגיה של ההשקעות__{.color-primary}
@@ -59,7 +59,7 @@ hide:
 
 </div>
 
-
+ -->
 
 לפני הכל- משהו חשוב:
 
